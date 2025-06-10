@@ -95,73 +95,73 @@ export default function Home() {
           <Slider {...settings}>
             {/* Service Card 1: Digital Marketing */}
             <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
                   <Image src="/images/icons/digital-marketing.png" alt="Digital Marketing Icon" width={32} height={32} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Marketing</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition">READ MORE</button>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
               </div>
             </div>
 
             {/* Service Card 2: Social Media Management */}
             <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
                   <Image src="/images/icons/social-media-management.png" alt="Social Media Management Icon" width={32} height={32} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Social Media Management</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition">READ MORE</button>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
               </div>
             </div>
 
             {/* Service Card 3: Content Production */}
             <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
                   <Image src="/images/icons/content-production.png" alt="Content Production Icon" width={32} height={32} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Content Production</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition">READ MORE</button>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
               </div>
             </div>
 
             {/* Service Card 4 Media Buying */}
             <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
                   <Image src="/images/icons/media-buying.png" alt="Media Buying Icon" width={32} height={32} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Media Buying</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition">READ MORE</button>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
               </div>
             </div>
 
             {/* Service Card 5 Website Design */}
             <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
                   <Image src="/images/icons/website-design.png" alt="Website Design Icon" width={32} height={32} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Website Design</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition">READ MORE</button>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
               </div>
             </div>
 
             {/* Service Card 6 Digital Skills Training */}
             <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
                   <Image src="/images/icons/digital-skills-training.png" alt="Digital Skills Training Icon" width={32} height={32} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Skills Training</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition">READ MORE</button>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
               </div>
             </div>
           </Slider>
