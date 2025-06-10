@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Footer = () => {
+const MainFooter = () => {
   return (
-    <footer className="w-full bg-[#2a2a4a] text-white py-12">
+    <footer className="w-full bg-[#0e155b] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -101,4 +101,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default MainFooter; 

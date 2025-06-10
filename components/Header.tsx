@@ -10,7 +10,6 @@ const Header = () => {
       <div className="w-full" style={{ backgroundColor: '#ff2a0f' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-end h-10">
           <div className="flex space-x-4 text-white text-sm">
-            <Link href="#" className="hover:text-gray-200">Careers</Link>
             <Link href="#" className="hover:text-gray-200">Contact Us</Link>
           </div>
         </div>
@@ -26,9 +25,9 @@ const Header = () => {
           
           {/* Navigation */}
           <nav className="hidden md:flex space-x-8 items-center">
-            <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">Our Services</Link>
-            <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">Our Work</Link>
-            <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">About Us</Link>
+            <Link href="/our-services" className="text-gray-800 hover:text-gray-600 font-medium">Our Services</Link>
+            <Link href="/our-work" className="text-gray-800 hover:text-gray-600 font-medium">Our Work</Link>
+            <Link href="/about-us" className="text-gray-800 hover:text-gray-600 font-medium">About Us</Link>
             <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">Blog</Link>
             <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">Resources</Link>
           </nav>

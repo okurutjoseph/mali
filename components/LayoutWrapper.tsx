@@ -2,7 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import Header from './Header';
-import Footer from './Footer';
+import MainFooter from './MainFooter';
+import SecondaryFooter from './SecondaryFooter';
 
 interface LayoutWrapperProps {
   children: React.ReactNode;
@@ -10,14 +11,16 @@ interface LayoutWrapperProps {
 
 const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
   const pathname = usePathname();
-  const hideLayout = pathname?.startsWith('/admin') || pathname?.startsWith('/sign-in');
+  const isMainPage = pathname === '/';
 
   return (
-    <>
-      {!hideLayout && <Header />}
-      {children}
-      {!hideLayout && <Footer />}
-    </>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        {children}
+      </main>
+      {isMainPage ? <MainFooter /> : <SecondaryFooter />}
+    </div>
   );
 };
 
