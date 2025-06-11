@@ -9,8 +9,8 @@ import LayoutWrapper from "../components/LayoutWrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mali Digital Agency",
-  description: "We focusing on Digital marketing, social media management, content production, media buying, website design and digital skills training",
+  title: "Digital Marketing Agency in Uganda - Mali Digital Agency",
+  description: "We focus on Digital marketing, social media management, content production, media buying, website design and digital skills training",
 };
 
 export default function RootLayout({
