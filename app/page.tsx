@@ -196,7 +196,7 @@ export default function Home() {
               </div>
               {/* Client Logo 3 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
-                <Image src="/images/clients/level-0.webp" alt="Client Logo" width={80} height={40} objectFit="contain" />
+                <Image src="/images/clients/level.webp" alt="Client Logo" width={80} height={40} objectFit="contain" />
               </div>
               {/* Client Logo 4 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
