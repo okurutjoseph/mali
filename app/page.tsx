@@ -105,7 +105,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Service Card 2: Social Media Management */}
+            {/* Service Card 2: Digital Sales & Leads */}
+            <div className="px-2">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
+                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
+                  <Image src="/images/icons/digital-marketing.png" alt="Digital Marketing Icon" width={32} height={32} /> 
+                </div>
+                <h3 className="text-2xl font-semibold mb-4">Digital Sales & Leads</h3>
+                <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+              </div>
+            </div>
+
+            {/* Service Card 3: Social Media Management */}
             <div className="px-2">
               <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
@@ -117,7 +129,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Service Card 3: Content Production */}
+            {/* Service Card 4: Content Production */}
             <div className="px-2">
               <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
@@ -129,7 +141,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Service Card 4 Media Buying */}
+            {/* Service Card 5 Media Buying */}
             <div className="px-2">
               <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
@@ -141,7 +153,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Service Card 5 Website Design */}
+            {/* Service Card 6 Website Design */}
             <div className="px-2">
               <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
@@ -153,7 +165,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Service Card 6 Digital Skills Training */}
+            {/* Service Card 7 Digital Skills Training */}
             <div className="px-2">
               <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
