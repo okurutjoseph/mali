@@ -188,11 +188,11 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center">
               {/* Client Logo 1 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
-                <Image src="/images/clients/logo1.png" alt="Client Logo" width={120} height={60} objectFit="contain" />
+                <Image src="/images/clients/macho.webp" alt="Client Logo" width={120} height={60} objectFit="contain" />
               </div>
               {/* Client Logo 2 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
-                <Image src="/images/clients/logo2.png" alt="Client Logo" width={120} height={60} objectFit="contain" />
+                <Image src="/images/clients/nishati.webp" alt="Client Logo" width={120} height={60} objectFit="contain" />
               </div>
               {/* Client Logo 3 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
