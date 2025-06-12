@@ -16,8 +16,8 @@ const MainFooter = () => {
             </Link>
             <div className="text-sm">
               <p className="mb-4">We are a full-service Digital Marketing Agency. We work with brands that are looking to grow and need to create awareness, engage with prospects and generate leads to fuel that growth.</p>
-              <p className="mb-2">+256 785 410 218</p>
-              <p className="mb-4">info@malidigitalagency.com</p>
+              <p className="mb-2">+256 772 515 972 | +256 702 384 328</p>
+              <p className="mb-4"><a href="mailto:info@malidigitalagency.com" className="hover:text-gray-300">info@malidigitalagency.com</a></p>
             </div>
           </div>
           
