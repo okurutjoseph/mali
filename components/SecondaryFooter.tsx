@@ -31,6 +31,10 @@ const SecondaryFooter = () => {
               </Link>
               <Link href="#" className="flex items-center">
                 <span className="text-orange-500 mr-2">▶</span>
+                <span>DIGITAL SALES & LEADS</span>
+              </Link>
+              <Link href="#" className="flex items-center">
+                <span className="text-orange-500 mr-2">▶</span>
                 <span>SOCIAL MEDIA MANAGEMENT</span>
               </Link>
               <Link href="#" className="flex items-center">
