@@ -8,12 +8,10 @@ const Header = () => {
   const [isServicesHovered, setIsServicesHovered] = useState(false);
 
   const services = [
-    ['Growth Marketing Services', 'Search Engine Optimisation'],
-    ['Lead Generation Projects', 'Brand Development'],
-    ['Professional Services Marketing', 'Pay Per Click Advertising'],
-    ['Mobile Marketing', 'Email Marketing'],
-    ['Social Media Marketing', 'Content Marketing'],
-    ['Website Development', ''],
+    ['Digital Marketing', 'Media Buying'],
+    ['Digital Sales & Leads', 'Website Design'],
+    ['Social Media Management', 'Digital Skills Training'],
+    ['Content Production', ''],
   ];
 
   return (
