@@ -227,15 +227,15 @@ export default function Home() {
               </div>
               {/* Client Logo 5 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
-                <Image src="/images/clients/logo5.png" alt="Client Logo" width={120} height={60} objectFit="contain" />
+                <Image src="/images/clients/true-african.webp" alt="Client Logo" width={120} height={60} objectFit="contain" />
               </div>
               {/* Client Logo 6 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
-                <Image src="/images/clients/logo6.png" alt="Client Logo" width={120} height={60} objectFit="contain" />
+                <Image src="/images/clients/easy-housing.webp" alt="Client Logo" width={120} height={60} objectFit="contain" />
               </div>
               {/* Client Logo 7 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
-                <Image src="/images/clients/logo7.png" alt="Client Logo" width={120} height={60} objectFit="contain" />
+                <Image src="/images/clients/precision.webp" alt="Client Logo" width={120} height={60} objectFit="contain" />
               </div>
               {/* Client Logo 8 */}
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-24 w-full">
