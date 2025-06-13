@@ -39,13 +39,13 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
               </Link>
             </li>
             <li>
-              <Link href="/admin/clients" className="block px-4 py-2 hover:bg-gray-700">
-                Clients
+              <Link href="/admin/projects" className="block px-4 py-2 hover:bg-gray-700">
+                Projects
               </Link>
             </li>
             <li>
-              <Link href="/admin/testimonials" className="block px-4 py-2 hover:bg-gray-700">
-                Testimonials
+              <Link href="/admin/posts" className="block px-4 py-2 hover:bg-gray-700">
+                Posts
               </Link>
             </li>
           </ul>

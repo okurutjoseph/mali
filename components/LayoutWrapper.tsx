@@ -12,6 +12,11 @@ interface LayoutWrapperProps {
 const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
   const pathname = usePathname();
   const isMainPage = pathname === '/';
+  const isAuthPage = pathname?.startsWith('/sign-in') || pathname?.startsWith('/admin');
+
+  if (isAuthPage) {
+    return <div className="min-h-screen">{children}</div>;
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
