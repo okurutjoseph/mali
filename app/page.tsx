@@ -31,7 +31,8 @@ export default function Home() {
           initialSlide: 1
         }
       }
-    ]
+    ],
+    className: "py-8"
   };
 
   return (
@@ -87,93 +88,107 @@ export default function Home() {
       <div className="absolute left-1/2 transform -translate-x-1/2" style={{ top: '437.5px', height: '125px', width: '1px', background: '#fff' }}></div>
 
       {/* Our Services Section */}
-      <section className="py-16 bg-white text-gray-800">
+      <section className="py-16 pb-32 bg-white text-gray-800">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-12">
             <span className="text-orange-500 block">Our</span> Services
           </h2>
           <Slider {...settings}>
             {/* Service Card 1: Digital Marketing */}
-            <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
-                  <Image src="/images/icons/digital-marketing.png" alt="Digital Marketing Icon" width={32} height={32} /> 
+            <div className="px-2 mb-8">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+                <div className="flex items-center justify-center mb-6">
+                  <Image src="/images/services/digital-marketing.png" alt="Digital Marketing Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Marketing</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
+                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                </div>
               </div>
             </div>
 
             {/* Service Card 2: Digital Sales & Leads */}
-            <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
-                  <Image src="/images/icons/digital-marketing.png" alt="Digital Marketing Icon" width={32} height={32} /> 
+            <div className="px-2 mb-8">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+                <div className="flex items-center justify-center mb-6">
+                  <Image src="/images/services/digital-sales.png" alt="Digital Marketing Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Sales & Leads</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
+                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                </div>
               </div>
             </div>
 
             {/* Service Card 3: Social Media Management */}
-            <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
-                  <Image src="/images/icons/social-media-management.png" alt="Social Media Management Icon" width={32} height={32} /> 
+            <div className="px-2 mb-8">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+                <div className="flex items-center justify-center mb-6">
+                  <Image src="/images/services/social-media.png" alt="Social Media Management Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Social Media Management</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
+                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                </div>
               </div>
             </div>
 
             {/* Service Card 4: Content Production */}
-            <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
-                  <Image src="/images/icons/content-production.png" alt="Content Production Icon" width={32} height={32} /> 
+            <div className="px-2 mb-8">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+                <div className="flex items-center justify-center mb-6">
+                  <Image src="/images/services/content-production.png" alt="Content Production Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Content Production</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
+                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                </div>
               </div>
             </div>
 
             {/* Service Card 5 Media Buying */}
-            <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
-                  <Image src="/images/icons/media-buying.png" alt="Media Buying Icon" width={32} height={32} /> 
+            <div className="px-2 mb-8">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+                <div className="flex items-center justify-center mb-6">
+                  <Image src="/images/services/media-buying.png" alt="Media Buying Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Media Buying</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
+                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                </div>
               </div>
             </div>
 
             {/* Service Card 6 Website Design */}
-            <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
-                  <Image src="/images/icons/website-design.png" alt="Website Design Icon" width={32} height={32} /> 
+            <div className="px-2 mb-8">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+                <div className="flex items-center justify-center mb-6">
+                  <Image src="/images/services/website-design.png" alt="Website Design Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Website Design</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
+                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                </div>
               </div>
             </div>
 
             {/* Service Card 7 Digital Skills Training */}
-            <div className="px-2">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center justify-between h-[350px]">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-6">
-                  <Image src="/images/icons/digital-skills-training.png" alt="Digital Skills Training Icon" width={32} height={32} /> 
+            <div className="px-2 mb-8">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+                <div className="flex items-center justify-center mb-6">
+                  <Image src="/images/services/digital-skills.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Skills Training</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition mt-auto">READ MORE</button>
+                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
+                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                </div>
               </div>
             </div>
           </Slider>
