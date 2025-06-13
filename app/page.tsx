@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div className="relative" style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
-      <section className="w-full relative flex flex-col items-center justify-center" style={{ minHeight: '500px' }}>
+      <section className="w-full relative flex flex-col items-start justify-center" style={{ minHeight: '500px' }}>
         {/* Background video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <video 
@@ -53,10 +53,18 @@ export default function Home() {
           </video>
         </div>
         {/* Content over background */}
-        <div className="relative z-20 flex flex-col items-center w-full max-w-6xl px-4 py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Digital Marketing Agency</h1>
-          <p className="text-xl text-white mb-8 max-w-2xl">We help businesses grow through strategic digital marketing and creative solutions</p>
-          <button className="bg-lime-500 hover:bg-lime-600 text-black font-semibold px-8 py-3 rounded-full transition text-lg">Get Started</button>
+        <div className="relative z-20 flex flex-col items-start w-full max-w-6xl px-4 py-16 mx-auto">
+          <div className="w-full max-w-xl">
+            <Image 
+              src="/images/hero.png" 
+              alt="Mali Digital Agency" 
+              width={600} 
+              height={200} 
+              className="mb-8"
+              priority
+            />
+            <button className="bg-lime-500 hover:bg-lime-600 text-black font-semibold px-8 py-3 rounded-full transition text-lg">Get Started</button>
+          </div>
         </div>
       </section>
 
