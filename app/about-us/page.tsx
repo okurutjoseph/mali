@@ -1,196 +1,176 @@
 'use client';
-
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Breadcrumb from '@/components/Breadcrumb';
+import ServiceTemplate from '@/components/ServiceTemplate';
 
-export default function AboutUs() {
+export default function AboutUsPage() {
+  const teamMembers = [
+    {
+      name: "ADRONS IPENYE",
+      role: "Digital Marketing Specialist",
+      image: "/images/team/team1.jpg"
+    },
+    {
+      name: "DONNA D'AMICO",
+      role: "Content Strategist",
+      image: "/images/team/team2.jpg"
+    },
+    {
+      name: "UJUNWA ONUSOGU",
+      role: "Social Media Manager",
+      image: "/images/team/team3.jpg"
+    },
+    {
+      name: "SAYO ALONGE",
+      role: "Web Developer",
+      image: "/images/team/team4.jpg"
+    },
+    {
+      name: "ADEDOYIN ADEFISAN",
+      role: "SEO Specialist",
+      image: "/images/team/team5.jpg"
+    },
+    {
+      name: "KEHINDE AKINOLA",
+      role: "Project Manager",
+      image: "/images/team/team6.jpg"
+    }
+  ];
+
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] w-full">
-        <Image
-          src="/images/about-hero.jpg"
-          alt="About Us"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <motion.h1 
+    <>
+      <Breadcrumb 
+        pageName="About Us"
+        bgImage="/images/breadcrumb/about-banner.jpg"
+      />
+      <ServiceTemplate 
+        title="About Mali Digital Agency"
+        description="Mali Digital Agency is a full-service digital marketing agency focused on helping businesses grow. We work with specialized product brands and professional services firms that need to attract new prospects, engage with customers, and generate leads."
+        image="/images/about-left-img.png"
+        buttonLink="/book-consultation"
+      />
+
+      {/* Why Work With Us Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-white text-center"
+            className="text-center mb-12"
           >
-            About Us
-          </motion.h1>
-        </div>
-      </section>
-
-      {/* Company Overview */}
-      <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
-            <p className="text-gray-600 mb-4">
-              Founded with a vision to revolutionize the industry, we have grown from a small startup to a leading provider of innovative solutions. Our journey has been marked by continuous learning, adaptation, and a commitment to excellence.
-            </p>
-            <p className="text-gray-600">
-              Today, we stand proud as a team of dedicated professionals working together to deliver exceptional value to our clients and make a positive impact in our industry.
-            </p>
+            <h2 className="text-4xl font-bold mb-4">Why Work With Us</h2>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative h-[400px]"
-          >
-            <Image
-              src="/images/company.jpg"
-              alt="Our Company"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-lg shadow-lg"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="bg-white p-8 rounded-lg shadow-lg text-center"
             >
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-gray-600">
-                To empower businesses with innovative solutions that drive growth and success. We are committed to delivering excellence in every project and building lasting relationships with our clients.
-              </p>
+              <Image
+                src="/images/icons/experience.png"
+                alt="Our Experience"
+                width={64}
+                height={64}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-bold mb-3">OUR EXPERIENCE</h3>
+              <p className="text-gray-600">Some of our team members have been in the marketing and technology industry for at least 10 years. This blend of traditional marketing experience ensures that Ziza Digital understands the language of the past, yet fluent in the lingo of the future</p>
             </motion.div>
+
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-lg shadow-lg"
+              className="bg-white p-8 rounded-lg shadow-lg text-center"
             >
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-gray-600">
-                To be the global leader in providing cutting-edge solutions that transform businesses and create sustainable value for our clients and stakeholders.
-              </p>
+              <Image
+                src="/images/icons/expertise.png"
+                alt="Our Expertise"
+                width={64}
+                height={64}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-bold mb-3">OUR EXPERTISE</h3>
+              <p className="text-gray-600">We are powered by a multidisciplinary team of expert marketers, Content Writers, Social Media Managers, Art Directors, Web Developers, Strategists etc. We leverage on their unique skill sets to develop communications that meet the need of discerning clients.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="bg-white p-8 rounded-lg shadow-lg text-center"
+            >
+                <Image
+                src="/images/icons/work-model.png"
+                alt="Our Work Model"
+                width={64}
+                height={64}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-bold mb-3">OUR WORK MODEL</h3>
+              <p className="text-gray-600">We learn about your business from you, we learn about your prospects from research and we learn about your competitors from experience. We combine these insights to create unique marketing experiences for your prospects and clients.</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-        >
-          Our Leadership Team
-        </motion.h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              name: "John Doe",
-              position: "CEO & Founder",
-              image: "/images/team-1.jpg"
-            },
-            {
-              name: "Jane Smith",
-              position: "CTO",
-              image: "/images/team-2.jpg"
-            },
-            {
-              name: "Mike Johnson",
-              position: "COO",
-              image: "/images/team-3.jpg"
-            }
-          ].map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="relative h-[300px] mb-4">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-              <p className="text-gray-600">{member.position}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.h2
+      {/* Our Team Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12"
+            className="text-center mb-12"
           >
-            Our Core Values
-          </motion.h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Innovation",
-                description: "Constantly pushing boundaries and embracing new ideas"
-              },
-              {
-                title: "Excellence",
-                description: "Committed to delivering the highest quality in everything we do"
-              },
-              {
-                title: "Integrity",
-                description: "Operating with honesty, transparency, and ethical standards"
-              },
-              {
-                title: "Collaboration",
-                description: "Working together to achieve common goals"
-              }
-            ].map((value, index) => (
+            <h2 className="text-4xl font-bold mb-4">Our Team</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Meet our talented team of professionals who are dedicated to delivering exceptional results for our clients.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
               <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-lg text-center"
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="bg-white rounded-lg overflow-hidden shadow-lg"
               >
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <div className="relative h-80 w-full">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                  <p className="text-gray-600">{member.role}</p>
+                  <div className="flex justify-center space-x-4 mt-4">
+                    <a href="#" className="text-gray-600 hover:text-blue-600">
+                      <span className="sr-only">LinkedIn</span>
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                    </a>
+                    <a href="#" className="text-gray-600 hover:text-blue-400">
+                      <span className="sr-only">Twitter</span>
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 } 
