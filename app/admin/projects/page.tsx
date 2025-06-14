@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
@@ -9,9 +10,12 @@ const ProjectsPage = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Projects</h1>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+        <Link 
+          href="/admin/projects/add"
+          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+        >
           Add New Project
-        </button>
+        </Link>
       </div>
 
       {/* Projects List */}

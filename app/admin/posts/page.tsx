@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const PostsPage = () => {
   const [posts, setPosts] = useState([]);
@@ -9,9 +10,12 @@ const PostsPage = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Posts</h1>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+        <Link 
+          href="/admin/posts/add"
+          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+        >
           Add New Post
-        </button>
+        </Link>
       </div>
 
       {/* Posts List */}

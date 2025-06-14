@@ -57,25 +57,25 @@ export default function OurServices() {
         {/* Services Grid Section */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
               className="text-center mb-12"
-            >
+        >
               <h2 className="text-4xl font-bold mb-4">Our Services</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
                 Comprehensive digital marketing solutions to help your business grow
-              </p>
-            </motion.div>
+          </p>
+        </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <motion.div
-                  key={service.title}
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
                   className="bg-[#2a1842] rounded-lg overflow-hidden text-white text-center group hover:bg-[#3a2357] transition-colors duration-300"
                 >
                   <div className="p-8">
@@ -87,7 +87,7 @@ export default function OurServices() {
                         height={64}
                         className="mx-auto"
                       />
-                    </div>
+        </div>
                     <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                     <p className="text-gray-300 mb-6">{service.description}</p>
                     <Link 
@@ -97,19 +97,19 @@ export default function OurServices() {
                       Learn More
                     </Link>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Need Help Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 text-center">
-            <motion.div
+        <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
               className="max-w-3xl mx-auto"
             >
               <h2 className="text-3xl font-bold mb-4">Need help with marketing but not sure where to start?</h2>
@@ -122,10 +122,10 @@ export default function OurServices() {
               >
                 Book a Consultation
               </Link>
-            </motion.div>
+        </motion.div>
           </div>
-        </section>
+      </section>
       </div>
     </main>
   );
-}
+} 
