@@ -3,26 +3,21 @@ import { mutation, query } from "./_generated/server";
 
 export const create = mutation({
   args: {
-    title: v.string(),
-    description: v.string(),
-    imageUrl: v.string(),
-    category: v.string(),
-    clientName: v.string(),
-    completionDate: v.number(),
+    name: v.string(),
   },
   handler: async (ctx, args) => {
-    const projectId = await ctx.db.insert("projects", {
+    const categoryId = await ctx.db.insert("projectCategories", {
       ...args,
       createdAt: Date.now(),
     });
-    return projectId;
+    return categoryId;
   },
 });
 
 export const list = query({
   handler: async (ctx) => {
     return await ctx.db
-      .query("projects")
+      .query("projectCategories")
       .order("desc")
       .collect();
   },
@@ -30,13 +25,8 @@ export const list = query({
 
 export const update = mutation({
   args: {
-    id: v.id("projects"),
-    title: v.string(),
-    description: v.string(),
-    imageUrl: v.string(),
-    category: v.string(),
-    clientName: v.string(),
-    completionDate: v.number(),
+    id: v.id("projectCategories"),
+    name: v.string(),
   },
   handler: async (ctx, args) => {
     const { id, ...rest } = args;
@@ -45,7 +35,7 @@ export const update = mutation({
 });
 
 export const remove = mutation({
-  args: { id: v.id("projects") },
+  args: { id: v.id("projectCategories") },
   handler: async (ctx, { id }) => {
     await ctx.db.delete(id);
   },

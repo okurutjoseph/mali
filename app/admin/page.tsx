@@ -13,7 +13,6 @@ interface Project {
   category: string;
   clientName: string;
   completionDate: number;
-  technologies: string[];
   createdAt: number;
 }
 
@@ -25,7 +24,7 @@ interface Post {
   imageUrl: string;
   excerpt: string;
   author: string;
-  tags: string[];
+  categories: string[];
   published: boolean;
   createdAt: number;
   updatedAt: number;

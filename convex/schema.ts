@@ -9,7 +9,6 @@ export default defineSchema({
     category: v.string(),
     clientName: v.string(),
     completionDate: v.number(),
-    technologies: v.array(v.string()),
     createdAt: v.number(),
   }),
   posts: defineTable({
@@ -18,9 +17,17 @@ export default defineSchema({
     imageUrl: v.string(),
     excerpt: v.string(),
     author: v.string(),
-    tags: v.array(v.string()),
+    categories: v.array(v.string()),
     published: v.boolean(),
     createdAt: v.number(),
     updatedAt: v.number(),
+  }),
+  projectCategories: defineTable({
+    name: v.string(),
+    createdAt: v.number(),
+  }),
+  postCategories: defineTable({
+    name: v.string(),
+    createdAt: v.number(),
   }),
 });

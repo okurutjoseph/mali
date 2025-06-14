@@ -8,7 +8,7 @@ export const create = mutation({
     imageUrl: v.string(),
     excerpt: v.string(),
     author: v.string(),
-    tags: v.array(v.string()),
+    categories: v.array(v.string()),
     published: v.boolean(),
   },
   handler: async (ctx, args) => {
@@ -39,7 +39,7 @@ export const update = mutation({
     imageUrl: v.string(),
     excerpt: v.string(),
     author: v.string(),
-    tags: v.array(v.string()),
+    categories: v.array(v.string()),
     published: v.boolean(),
   },
   handler: async (ctx, args) => {

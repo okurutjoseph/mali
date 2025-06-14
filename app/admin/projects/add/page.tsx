@@ -2,22 +2,22 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useMutation } from 'convex/react';
+import { useMutation, useQuery } from 'convex/react';
 import { api } from '@/convex/_generated/api';
 import UploadButton from '@/app/components/UploadButton';
 
 const AddProjectPage = () => {
   const router = useRouter();
   const createProject = useMutation(api.projects.create);
+  const categories = useQuery(api.projectCategories.list) || [];
 
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     category: '',
     imageUrl: '',
-    clientName: '', // Required by schema
-    completionDate: new Date().getTime(), // Required by schema
-    technologies: [], // Required by schema
+    clientName: '',
+    completionDate: new Date().getTime(),
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -29,10 +29,7 @@ const AddProjectPage = () => {
     e.preventDefault();
     
     try {
-      await createProject({
-        ...formData,
-        technologies: ['Default'], // Providing a default value as required by schema
-      });
+      await createProject(formData);
       
       router.push('/admin/projects');
       router.refresh();
@@ -91,15 +88,21 @@ const AddProjectPage = () => {
 
         <div className="space-y-2">
           <label htmlFor="category" className="block text-sm font-medium">Category</label>
-          <input
-            type="text"
+          <select
             id="category"
             name="category"
             value={formData.category}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border rounded-md"
             required
-          />
+          >
+            <option value="">Select a category</option>
+            {categories.map((category) => (
+              <option key={category._id} value={category.name}>
+                {category.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="space-y-2">
@@ -117,7 +120,7 @@ const AddProjectPage = () => {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors cursor-pointer"
         >
           Create Project
         </button>

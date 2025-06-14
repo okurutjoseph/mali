@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useMutation } from 'convex/react';
+import { useMutation, useQuery } from 'convex/react';
 import { api } from '@/convex/_generated/api';
 import UploadButton from '@/app/components/UploadButton';
 
 const AddPostPage = () => {
   const router = useRouter();
   const createPost = useMutation(api.posts.create);
+  const categories = useQuery(api.postCategories.list) || [];
 
   const [formData, setFormData] = useState({
     title: '',
@@ -32,7 +33,7 @@ const AddPostPage = () => {
         imageUrl: formData.imageUrl,
         excerpt: formData.description.substring(0, 150) + '...',
         author: 'Admin',
-        tags: [formData.category],
+        categories: [formData.category],
         published: true
       });
       
@@ -93,20 +94,26 @@ const AddPostPage = () => {
 
         <div className="space-y-2">
           <label htmlFor="category" className="block text-sm font-medium">Category</label>
-          <input
-            type="text"
+          <select
             id="category"
             name="category"
             value={formData.category}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border rounded-md"
             required
-          />
+          >
+            <option value="">Select a category</option>
+            {categories.map((category) => (
+              <option key={category._id} value={category.name}>
+                {category.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors cursor-pointer"
         >
           Create Post
         </button>
