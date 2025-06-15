@@ -3,10 +3,15 @@
 import Link from 'next/link';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const PostsPage = () => {
+  const router = useRouter();
   const posts = useQuery(api.posts.list) || [];
   const togglePublish = useMutation(api.posts.togglePublish);
+  const deletePost = useMutation(api.posts.remove);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const handleTogglePublish = async (postId: any, currentStatus: boolean) => {
     try {
@@ -16,7 +21,26 @@ const PostsPage = () => {
       });
     } catch (error) {
       console.error('Error toggling publish status:', error);
+      alert('Failed to update publish status. Please try again.');
     }
+  };
+
+  const handleDelete = async (postId: any) => {
+    if (window.confirm('Are you sure you want to delete this post? This action cannot be undone.')) {
+      setIsDeleting(true);
+      try {
+        await deletePost({ id: postId });
+      } catch (error) {
+        console.error('Error deleting post:', error);
+        alert('Failed to delete post. Please try again.');
+      } finally {
+        setIsDeleting(false);
+      }
+    }
+  };
+
+  const handleEdit = (postId: string) => {
+    router.push(`/admin/posts/edit/${postId}`);
   };
 
   return (
@@ -48,12 +72,20 @@ const PostsPage = () => {
             {posts.map((post) => (
               <div key={post._id} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                 {post.imageUrl && (
-                  <div className="aspect-video w-full">
+                  <div className="aspect-video w-full relative group">
                     <img 
                       src={post.imageUrl} 
                       alt={post.title}
                       className="w-full h-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <button
+                        onClick={() => handleEdit(post._id)}
+                        className="bg-white text-gray-800 px-3 py-1 rounded-full mx-2 hover:bg-blue-500 hover:text-white transition-colors"
+                      >
+                        Edit Image
+                      </button>
+                    </div>
                   </div>
                 )}
                 <div className="p-4">
@@ -65,7 +97,8 @@ const PostsPage = () => {
                         post.published 
                           ? 'bg-green-100 text-green-800 hover:bg-green-200' 
                           : 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200'
-                      } cursor-pointer`}
+                      } cursor-pointer disabled:opacity-50`}
+                      disabled={isDeleting}
                     >
                       {post.published ? 'Published' : 'Draft'}
                     </button>
@@ -88,14 +121,16 @@ const PostsPage = () => {
                   </div>
                   <div className="mt-4 flex justify-end gap-2">
                     <button
-                      onClick={() => {/* TODO: Implement edit */}}
-                      className="text-blue-600 hover:text-blue-800 cursor-pointer"
+                      onClick={() => handleEdit(post._id)}
+                      className="text-blue-600 hover:text-blue-800 cursor-pointer disabled:opacity-50"
+                      disabled={isDeleting}
                     >
                       Edit
                     </button>
                     <button
-                      onClick={() => {/* TODO: Implement delete */}}
-                      className="text-red-600 hover:text-red-800 cursor-pointer"
+                      onClick={() => handleDelete(post._id)}
+                      className="text-red-600 hover:text-red-800 cursor-pointer disabled:opacity-50"
+                      disabled={isDeleting}
                     >
                       Delete
                     </button>
