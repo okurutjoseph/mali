@@ -7,14 +7,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export default function OurWork() {
-  const categories = useQuery(api.projectCategories.list) || [];
-  const projects = useQuery(api.projects.list) || [];
+export default function Blog() {
+  const categories = useQuery(api.postCategories.list) || [];
+  const posts = useQuery(api.posts.list) || [];
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const filteredProjects = activeCategory
-    ? projects.filter(project => project.category === activeCategory)
-    : projects;
+  // Filter only published posts
+  const publishedPosts = posts.filter(post => post.published);
+  
+  // Filter by category if one is selected
+  const filteredPosts = activeCategory
+    ? publishedPosts.filter(post => post.categories.includes(activeCategory))
+    : publishedPosts;
 
   const getSlug = (title: string) => {
     return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -23,8 +27,8 @@ export default function OurWork() {
   return (
     <main>
       <Breadcrumb 
-        pageName="Our Work"
-        bgImage="/images/breadcrumb/our-work.jpg"
+        pageName="Blog"
+        bgImage="/images/breadcrumb/blog.jpg"
       />
       
       {/* Categories Tabs */}
@@ -38,7 +42,7 @@ export default function OurWork() {
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
-            All
+            All Posts
           </button>
           {categories.map((category) => (
             <button
@@ -55,34 +59,49 @@ export default function OurWork() {
           ))}
         </div>
 
-        {/* Projects Grid */}
+        {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredPosts.map((post) => (
             <Link 
-              href={`/our-work/${getSlug(project.title)}`}
-              key={project._id}
+              href={`/blog/${getSlug(post.title)}`}
+              key={post._id}
               className="group bg-white rounded-lg shadow-lg overflow-hidden transition-all hover:shadow-xl"
             >
               <div className="relative h-64">
-                <Image
-                  src={project.imageUrl}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform group-hover:scale-110"
-                />
+                {post.imageUrl ? (
+                  <Image
+                    src={post.imageUrl}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                    <span className="text-gray-400">No image available</span>
+                  </div>
+                )}
               </div>
               <div className="p-6">
-                <span className="text-sm font-medium text-blue-600 mb-2 block">
-                  {project.category}
-                </span>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {post.categories.map((category, index) => (
+                    <span 
+                      key={index}
+                      className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full"
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </div>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
-                  {project.title}
+                  {post.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 mb-4 line-clamp-2">
+                  {post.excerpt}
+                </p>
                 <div className="flex justify-between items-center text-sm text-gray-500">
-                  <span>Client: {project.clientName}</span>
+                  <span>{post.author}</span>
                   <span>
-                    {new Date(project.completionDate).toLocaleDateString()}
+                    {new Date(post.createdAt).toLocaleDateString()}
                   </span>
                 </div>
               </div>
@@ -90,11 +109,14 @@ export default function OurWork() {
           ))}
         </div>
 
-        {/* No Projects Message */}
-        {filteredProjects.length === 0 && (
+        {/* No Posts Message */}
+        {filteredPosts.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-600 text-lg">
-              No projects found for this category.
+              {activeCategory 
+                ? `No posts found in category "${activeCategory}"`
+                : 'No blog posts available yet.'
+              }
             </p>
           </div>
         )}

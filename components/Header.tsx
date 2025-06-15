@@ -89,7 +89,7 @@ const Header = () => {
             </div>
             <Link href="/our-work" className="text-gray-800 hover:text-gray-600 font-medium">Our Work</Link>
             <Link href="/about-us" className="text-gray-800 hover:text-gray-600 font-medium">About Us</Link>
-            <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">Blog</Link>
+            <Link href="/blog" className="text-gray-800 hover:text-gray-600 font-medium">Blog</Link>
             <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">Resources</Link>
             <Link href="#" className="bg-purple-900 text-white px-4 py-2 rounded-full font-bold flex items-center hover:bg-purple-800 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
