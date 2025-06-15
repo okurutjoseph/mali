@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
+import Button from '@/components/Button';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -75,18 +76,21 @@ export default function Home() {
             <div>
               <Image
                 src="/images/imgs-55.png"
-                alt="About Ziza Digital"
+                alt="About Mali Digital"
                 width={768}
                 height={512}
                 className="shadow-md"
               />
             </div>
-            <div className="text-center">
-              <h2 className="text-3xl font-semibold mb-4">About Mali Digital Agency</h2>
+            <div className="text-left">
+              <h3 className="text-[60px] font-[400] mb-6 leading-[1]">
+                About<br />
+                Mali Digital Agency
+              </h3>
               <p className="mb-4">We are a full-service digital marketing agency focused on helping businesses grow. We work with specialized product brands and professional services firms that need to attract new prospects, engage with customers, and generate leads.</p>
               <p className="mb-4">With offices in Uganda, Mali Digital Agency leverages its multidisciplinary team's unique skill sets and broad experience across industries to help clients across the world.</p>
               <p className="mb-4">Need help with creating awareness for your brand, connecting with your target audience, or generating leads?</p>
-              <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition text-lg">Book a Consultation</button>
+              <Button>Book a Consultation</Button>
             </div>
           </div>
         </div>
@@ -111,7 +115,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Digital Marketing</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
                 <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                  <Button>READ MORE</Button>
                 </div>
               </div>
             </div>
@@ -125,7 +129,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Digital Sales & Leads</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
                 <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                  <Button>READ MORE</Button>
                 </div>
               </div>
             </div>
@@ -139,7 +143,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Social Media Management</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
                 <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                  <Button>READ MORE</Button>
                 </div>
               </div>
             </div>
@@ -153,7 +157,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Content Production</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
                 <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                  <Button>READ MORE</Button>
                 </div>
               </div>
             </div>
@@ -167,7 +171,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Media Buying</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
                 <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                  <Button>READ MORE</Button>
                 </div>
               </div>
             </div>
@@ -181,7 +185,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Website Design</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
                 <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                  <Button>READ MORE</Button>
                 </div>
               </div>
             </div>
@@ -195,7 +199,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Digital Skills Training</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
                 <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <button className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full transition shadow-lg">READ MORE</button>
+                  <Button>READ MORE</Button>
                 </div>
               </div>
             </div>

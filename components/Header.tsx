@@ -38,7 +38,7 @@ const Header = () => {
             <div className="relative group">
               <Link 
                 href="/our-services" 
-                className="text-gray-800 hover:text-gray-600 font-medium py-8"
+                className="text-black hover:text-gray-600 font-medium py-8 font-poppins"
                 onMouseEnter={() => setIsServicesHovered(true)}
                 onMouseLeave={() => setIsServicesHovered(false)}
               >
@@ -58,7 +58,7 @@ const Header = () => {
                         <Link
                           key={`left-${rowIndex}`}
                           href={`/our-services/${row[0].toLowerCase().replace(/\s+/g, '-')}`}
-                          className="px-4 py-3 text-gray-700 hover:bg-gray-50 block font-medium relative"
+                          className="px-4 py-3 text-gray-700 hover:text-white hover:bg-[#3344a3] block font-medium relative font-poppins transition-colors duration-200"
                         >
                           {row[0]}
                           {rowIndex !== services.length - 1 && (
@@ -74,7 +74,7 @@ const Header = () => {
                         <Link
                           key={`right-${rowIndex}`}
                           href={`/our-services/${row[1].toLowerCase().replace(/\s+/g, '-')}`}
-                          className="px-4 py-3 text-gray-700 hover:bg-gray-50 block font-medium relative"
+                          className="px-4 py-3 text-gray-700 hover:text-white hover:bg-[#3344a3] block font-medium relative font-poppins transition-colors duration-200"
                         >
                           {row[1]}
                           {rowIndex !== services.length - 1 && (
@@ -87,11 +87,14 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <Link href="/our-work" className="text-gray-800 hover:text-gray-600 font-medium">Our Work</Link>
-            <Link href="/about-us" className="text-gray-800 hover:text-gray-600 font-medium">About Us</Link>
-            <Link href="/blog" className="text-gray-800 hover:text-gray-600 font-medium">Blog</Link>
-            <Link href="#" className="text-gray-800 hover:text-gray-600 font-medium">Resources</Link>
-            <Link href="#" className="bg-purple-900 text-white px-4 py-2 rounded-full font-bold flex items-center hover:bg-purple-800 transition-colors">
+            <Link href="/our-work" className="text-black hover:text-gray-600 font-medium font-poppins">Our Work</Link>
+            <Link href="/about-us" className="text-black hover:text-gray-600 font-medium font-poppins">About Us</Link>
+            <Link href="/blog" className="text-black hover:text-gray-600 font-medium font-poppins">Blog</Link>
+            <Link href="#" className="text-black hover:text-gray-600 font-medium font-poppins">Resources</Link>
+            <Link 
+              href="#" 
+              className="bg-white hover:bg-white text-black border border-black px-6 py-2 rounded-[50px] font-medium text-[15px] font-poppins flex items-center"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
