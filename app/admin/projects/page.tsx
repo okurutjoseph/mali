@@ -23,23 +23,28 @@ const ProjectsPage = () => {
   const router = useRouter();
   const projects = useQuery(api.projects.list) || [];
   const deleteProject = useMutation(api.projects.remove);
-  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<Id<"projects"> | null>(null);
 
   const handleDelete = async (projectId: Id<"projects">) => {
+    console.log('Attempting to delete project:', projectId);
     if (window.confirm('Are you sure you want to delete this project? This action cannot be undone.')) {
-      setIsDeleting(projectId);
+      setDeletingId(projectId);
       try {
+        console.log('Calling deleteProject mutation with:', { id: projectId });
         await deleteProject({ id: projectId });
+        console.log('Project deleted successfully');
+        router.refresh();
       } catch (error) {
         console.error('Error deleting project:', error);
         alert('Failed to delete project. Please try again.');
       } finally {
-        setIsDeleting(null);
+        setDeletingId(null);
       }
     }
   };
 
   const handleEdit = (projectId: Id<"projects">) => {
+    console.log('Navigating to edit page for project:', projectId);
     router.push(`/admin/projects/edit/${projectId}`);
   };
 
@@ -69,60 +74,64 @@ const ProjectsPage = () => {
           <p className="text-gray-500 text-center">No projects found. Add your first project!</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project: Project) => (
-              <div key={project._id} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                {project.imageUrl && (
-                  <div className="aspect-video w-full relative group">
-                    <img 
-                      src={project.imageUrl} 
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+            {projects.map((project: Project) => {
+              console.log('Rendering project:', project._id);
+              return (
+                <div key={project._id} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                  {project.imageUrl && (
+                    <div className="aspect-video w-full relative group">
+                      <img 
+                        src={project.imageUrl} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <button
+                          onClick={() => handleEdit(project._id)}
+                          className="bg-white text-gray-800 px-3 py-1 rounded-full mx-2 hover:bg-blue-500 hover:text-white transition-colors"
+                          disabled={deletingId === project._id}
+                        >
+                          Edit Image
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">{project.description}</p>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
+                          {project.category}
+                        </span>
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        Client: {project.clientName}
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        Completion: {new Date(project.completionDate).toLocaleDateString()}
+                      </div>
+                    </div>
+                    <div className="mt-4 flex justify-end gap-2">
                       <button
                         onClick={() => handleEdit(project._id)}
-                        className="bg-white text-gray-800 px-3 py-1 rounded-full mx-2 hover:bg-blue-500 hover:text-white transition-colors"
+                        className="text-blue-600 hover:text-blue-800 cursor-pointer disabled:opacity-50"
+                        disabled={deletingId === project._id}
                       >
-                        Edit Image
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => handleDelete(project._id)}
+                        className="text-red-600 hover:text-red-800 cursor-pointer disabled:opacity-50"
+                        disabled={deletingId === project._id}
+                      >
+                        Delete
                       </button>
                     </div>
                   </div>
-                )}
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 text-sm mb-3 line-clamp-2">{project.description}</p>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
-                        {project.category}
-                      </span>
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      Client: {project.clientName}
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      Completion: {new Date(project.completionDate).toLocaleDateString()}
-                    </div>
-                  </div>
-                  <div className="mt-4 flex justify-end gap-2">
-                    <button
-                      onClick={() => handleEdit(project._id)}
-                      className="text-blue-600 hover:text-blue-800 cursor-pointer disabled:opacity-50"
-                      disabled={isDeleting === project._id}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleDelete(project._id)}
-                      className="text-red-600 hover:text-red-800 cursor-pointer disabled:opacity-50"
-                      disabled={isDeleting === project._id}
-                    >
-                      Delete
-                    </button>
-                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
