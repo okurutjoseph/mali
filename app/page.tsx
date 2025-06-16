@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
-import Button from '@/components/Button';
+import PrimaryButton from '@/components/PrimaryButton';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,6 +14,9 @@ export default function Home() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -90,7 +93,7 @@ export default function Home() {
               <p className="mb-4">We are a full-service digital marketing agency focused on helping businesses grow. We work with specialized product brands and professional services firms that need to attract new prospects, engage with customers, and generate leads.</p>
               <p className="mb-4">With offices in Uganda, Mali Digital Agency leverages its multidisciplinary team's unique skill sets and broad experience across industries to help clients across the world.</p>
               <p className="mb-4">Need help with creating awareness for your brand, connecting with your target audience, or generating leads?</p>
-              <Button>Book a Consultation</Button>
+              <PrimaryButton>Book a Consultation</PrimaryButton>
             </div>
           </div>
         </div>
@@ -102,104 +105,105 @@ export default function Home() {
       {/* Our Services Section */}
       <section className="py-16 pb-32 bg-white text-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-12">
-            <span className="text-orange-500 block">Our</span> Services
+          <h2 className="mb-12">
+            <span className="text-orange-500 block text-6xl font-bold">Our</span>
+            <span className="text-5xl font-bold">Services</span>
           </h2>
           <Slider {...settings}>
             {/* Service Card 1: Digital Marketing */}
             <div className="px-2 mb-8">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/digital-marketing.png" alt="Digital Marketing Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Marketing</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
-                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <Button>READ MORE</Button>
+                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                  <PrimaryButton>READ MORE</PrimaryButton>
                 </div>
               </div>
             </div>
 
             {/* Service Card 2: Digital Sales & Leads */}
             <div className="px-2 mb-8">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/digital-sales.png" alt="Digital Marketing Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Sales & Leads</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
-                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <Button>READ MORE</Button>
+                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                  <PrimaryButton>READ MORE</PrimaryButton>
                 </div>
               </div>
             </div>
 
             {/* Service Card 3: Social Media Management */}
             <div className="px-2 mb-8">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/social-media.png" alt="Social Media Management Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Social Media Management</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
-                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <Button>READ MORE</Button>
+                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                  <PrimaryButton>READ MORE</PrimaryButton>
                 </div>
               </div>
             </div>
 
             {/* Service Card 4: Content Production */}
             <div className="px-2 mb-8">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/content-production.png" alt="Content Production Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Content Production</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
-                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <Button>READ MORE</Button>
+                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                  <PrimaryButton>READ MORE</PrimaryButton>
                 </div>
               </div>
             </div>
 
             {/* Service Card 5 Media Buying */}
             <div className="px-2 mb-8">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/media-buying.png" alt="Media Buying Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Media Buying</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
-                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <Button>READ MORE</Button>
+                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                  <PrimaryButton>READ MORE</PrimaryButton>
                 </div>
               </div>
             </div>
 
             {/* Service Card 6 Website Design */}
             <div className="px-2 mb-8">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/website-design.png" alt="Website Design Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Website Design</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
-                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <Button>READ MORE</Button>
+                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                  <PrimaryButton>READ MORE</PrimaryButton>
                 </div>
               </div>
             </div>
 
             {/* Service Card 7 Digital Skills Training */}
             <div className="px-2 mb-8">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md flex flex-col items-center h-[350px] relative">
+              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/digital-skills.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Digital Skills Training</h3>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
-                <div className="absolute left-1/2 bottom-0 flex justify-center" style={{ transform: 'translate(-50%, 50%)' }}>
-                  <Button>READ MORE</Button>
+                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                  <PrimaryButton>READ MORE</PrimaryButton>
                 </div>
               </div>
             </div>
