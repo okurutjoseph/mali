@@ -398,8 +398,10 @@ export default function Home() {
       </section>
 
       {/* Our Happy Clients Section */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)' }}>
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-[#0e155b]"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/bluesec.jpg')] bg-no-repeat bg-left bg-contain opacity-60"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-center mb-16">
             <span className="text-[#ff6900] text-6xl font-bold">Our Happy</span>
             <span className="text-white text-6xl font-bold ml-4">Clients</span>
@@ -407,7 +409,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 2).map((testimonial, index) => (
-              <div key={testimonial._id} className="bg-[#1e1b4b] rounded-lg p-8">
+              <div key={testimonial._id} className="bg-[#1e1b4b]/80 backdrop-blur rounded-lg p-8">
                 <div className="mb-4">
                   <h3 className="text-white text-2xl font-semibold">{testimonial.clientName}</h3>
                   <p className="text-gray-400">{testimonial.company}</p>
