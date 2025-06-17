@@ -355,7 +355,7 @@ export default function Home() {
         </div>
 
         {/* Person Image */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-50">
           <Image
             src="/images/image.png"
             alt="Person with laptop"
@@ -367,7 +367,7 @@ export default function Home() {
       </section>
 
       {/* Marketing Insights Blog Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="pt-32 pb-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-6xl mb-4 flex flex-col items-center">
