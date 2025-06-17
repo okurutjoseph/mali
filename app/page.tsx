@@ -4,11 +4,28 @@ import Image from 'next/image';
 import Slider from "react-slick";
 import PrimaryButton from '@/components/PrimaryButton';
 import BlogSection from '../components/BlogSection';
+import { useQuery } from 'convex/react';
+import { api } from '@/convex/_generated/api';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const testimonials = useQuery(api.testimonials.list)?.filter(t => t.isActive) || [];
+
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonialIndex(prev => 
+      prev === 0 ? Math.max(testimonials.length - 2, 0) : prev - 2
+    );
+  };
+
+  const handleNextTestimonial = () => {
+    setCurrentTestimonialIndex(prev => 
+      prev + 2 >= testimonials.length ? 0 : prev + 2
+    );
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -389,53 +406,43 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Testimonial 1 */}
-            <div className="bg-[#1e1b4b] rounded-lg p-8">
-              <div className="mb-4">
-                <h3 className="text-white text-2xl font-semibold">Babatunde, F.</h3>
-                <p className="text-gray-400">VDT Communications</p>
-                <div className="flex mt-2">
-                  {[1, 2, 3, 4].map((star) => (
-                    <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <svg className="w-5 h-5 text-gray-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
+            {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 2).map((testimonial, index) => (
+              <div key={testimonial._id} className="bg-[#1e1b4b] rounded-lg p-8">
+                <div className="mb-4">
+                  <h3 className="text-white text-2xl font-semibold">{testimonial.clientName}</h3>
+                  <p className="text-gray-400">{testimonial.company}</p>
+                  <div className="flex mt-2">
+                    {[...Array(testimonial.rating)].map((_, star) => (
+                      <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                    {[...Array(5 - testimonial.rating)].map((_, star) => (
+                      <svg key={star} className="w-5 h-5 text-gray-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
                 </div>
+                <p className="text-white italic">{testimonial.testimonial}</p>
               </div>
-              <p className="text-white italic">Ziza Digital was professional, thorough and responsive all through the design, coding and hosting of our new website. We are pleased with the quality of work done as they went over and above the call of duty to delight us. We will be keep using them without thinking twice about it.</p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-[#1e1b4b] rounded-lg p-8">
-              <div className="mb-4">
-                <h3 className="text-white text-2xl font-semibold">Aderuku, O.</h3>
-                <p className="text-gray-400">Bukka Hut</p>
-                <div className="flex mt-2">
-                  {[1, 2, 3, 4].map((star) => (
-                    <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <svg className="w-5 h-5 text-gray-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                </div>
-              </div>
-              <p className="text-white italic">Ziza Digital understands her clients needs perfectly and at every step of the way, the agency creates high-impact digital marketing solutions that adequately addresses the clients' objectives. A team of young and passionate professionals, Ziza Digital is strongly recommended for companies seeking to hire a Digital Marketing agency.</p>
-            </div>
+            ))}
           </div>
 
           {/* Navigation Dots */}
           <div className="flex justify-center items-center mt-12 gap-4">
-            <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors">
+            <button 
+              onClick={handlePrevTestimonial}
+              className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors"
+            >
               <svg className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors">
+            <button 
+              onClick={handleNextTestimonial}
+              className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors"
+            >
               <svg className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
