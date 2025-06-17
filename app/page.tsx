@@ -353,7 +353,7 @@ export default function Home() {
       </div>
 
       {/* Get Started Section */}
-      <section className="relative w-full py-20 overflow-hidden bg-blue-900 text-white" style={{ minHeight: '700px' }}>
+      <section className="relative w-full py-20 overflow-visible bg-blue-900 text-white" style={{ minHeight: '700px', zIndex: 2 }}>
         {/* Background Image */}
         <Image
           src="/images/get-startsec.jpg"
@@ -372,19 +372,23 @@ export default function Home() {
         </div>
 
         {/* Person Image */}
-        <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-50">
-          <Image
-            src="/images/image.png"
-            alt="Person with laptop"
-            width={400}
-            height={400}
-            objectFit="contain"
-          />
+        <div className="absolute -bottom-56 left-1/2 transform -translate-x-1/2" style={{ zIndex: 9999 }}>
+          <div className="relative">
+            <Image
+              src="/images/image.png"
+              alt="Person with laptop"
+              width={600}
+              height={600}
+              className="drop-shadow-2xl"
+              priority
+              objectFit="contain"
+            />
+          </div>
         </div>
       </section>
 
       {/* Marketing Insights Blog Section */}
-      <section className="pt-32 pb-20 bg-gray-50">
+      <section className="relative pt-56 pb-20 bg-gray-50" style={{ zIndex: 1 }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-6xl mb-4 flex flex-col items-center">
