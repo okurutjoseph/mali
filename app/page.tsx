@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
 import PrimaryButton from '@/components/PrimaryButton';
+import BlogSection from '../components/BlogSection';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,7 +16,7 @@ export default function Home() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     responsive: [
       {
@@ -107,7 +108,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-12">
             <span className="text-orange-500 block text-6xl font-bold">Our</span>
-            <span className="text-5xl font-bold">Services</span>
+            <span className="text-[#2c2c52] text-5xl font-bold">Services</span>
           </h2>
           <Slider {...settings}>
             {/* Service Card 1: Digital Marketing */}
@@ -116,7 +117,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/digital-marketing.png" alt="Digital Marketing Icon" width={64} height={64} /> 
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Digital Marketing</h3>
+                <h4 className="mb-4">Digital Marketing</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
                 <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
                   <PrimaryButton>READ MORE</PrimaryButton>
@@ -130,7 +131,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/digital-sales.png" alt="Digital Marketing Icon" width={64} height={64} /> 
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Digital Sales & Leads</h3>
+                <h4 className="mb-4">Digital Sales & Leads</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
                 <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
                   <PrimaryButton>READ MORE</PrimaryButton>
@@ -144,7 +145,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/social-media.png" alt="Social Media Management Icon" width={64} height={64} /> 
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Social Media Management</h3>
+                <h4 className="mb-4">Social Media Management</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
                 <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
                   <PrimaryButton>READ MORE</PrimaryButton>
@@ -158,7 +159,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/content-production.png" alt="Content Production Icon" width={64} height={64} /> 
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Content Production</h3>
+                <h4 className="mb-4">Content Production</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
                 <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
                   <PrimaryButton>READ MORE</PrimaryButton>
@@ -172,7 +173,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/media-buying.png" alt="Media Buying Icon" width={64} height={64} /> 
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Media Buying</h3>
+                <h4 className="mb-4">Media Buying</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
                 <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
                   <PrimaryButton>READ MORE</PrimaryButton>
@@ -186,7 +187,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/website-design.png" alt="Website Design Icon" width={64} height={64} /> 
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Website Design</h3>
+                <h4 className="mb-4">Website Design</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
                 <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
                   <PrimaryButton>READ MORE</PrimaryButton>
@@ -200,7 +201,7 @@ export default function Home() {
                 <div className="flex items-center justify-center mb-6">
                   <Image src="/images/services/digital-skills.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Digital Skills Training</h3>
+                <h4 className="mb-4">Digital Skills Training</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
                 <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
                   <PrimaryButton>READ MORE</PrimaryButton>
@@ -335,7 +336,7 @@ export default function Home() {
       </div>
 
       {/* Get Started Section */}
-      <section className="relative w-full py-20 overflow-hidden bg-blue-900 text-white flex flex-col items-center justify-center" style={{ minHeight: '700px' }}>
+      <section className="relative w-full py-20 overflow-hidden bg-blue-900 text-white" style={{ minHeight: '700px' }}>
         {/* Background Image */}
         <Image
           src="/images/get-startsec.jpg"
@@ -347,14 +348,14 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-4">
+        <div className="relative z-10 flex flex-col items-center text-center px-4 mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Get Started with Marketing<br />for your brand</h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl">Transform your business with professional marketing ideated and implemented by experts with deep market experience.</p>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition text-lg">GET STARTED</button>
         </div>
 
         {/* Person Image */}
-        <div className="relative z-20 mt-12">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
           <Image
             src="/images/image.png"
             alt="Person with laptop"
@@ -362,6 +363,20 @@ export default function Home() {
             height={400}
             objectFit="contain"
           />
+        </div>
+      </section>
+
+      {/* Marketing Insights Blog Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-6xl mb-4 flex flex-col items-center">
+              <span className="text-orange-500">Marketing</span>
+              <span className="text-[#2c2c52] -mt-2">Insights</span>
+            </h2>
+          </div>
+
+          <BlogSection />
         </div>
       </section>
     </div>

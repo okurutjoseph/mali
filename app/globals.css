@@ -21,6 +21,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-lato), sans-serif;
 }
 
+/* Heading styles */
+h4 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
 .services-column {
   max-height: 250px; /* Adjust the value as needed */
   overflow: hidden;
