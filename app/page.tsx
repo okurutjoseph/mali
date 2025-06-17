@@ -413,7 +413,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 2).map((testimonial, index) => (
-              <div key={testimonial._id} className="bg-[#1e1b4b]/80 backdrop-blur rounded-lg p-8">
+              <div key={testimonial._id} className="bg-[#272d6c] rounded-xl border border-[#8c4661] p-10 h-full backdrop-blur">
                 <div className="mb-4">
                   <h3 className="text-white text-2xl font-semibold">{testimonial.clientName}</h3>
                   <p className="text-gray-400">{testimonial.company}</p>
@@ -435,22 +435,24 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Navigation Dots */}
+          {/* Navigation Arrows */}
           <div className="flex justify-center items-center mt-12 gap-4">
             <button 
               onClick={handlePrevTestimonial}
               className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors"
+              aria-label="Previous testimonial"
             >
-              <svg className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 12H5m7 7l-7-7 7-7" />
               </svg>
             </button>
             <button 
               onClick={handleNextTestimonial}
               className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors"
+              aria-label="Next testimonial"
             >
-              <svg className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-7-7l7 7-7 7" />
               </svg>
             </button>
           </div>
