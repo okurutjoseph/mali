@@ -33,7 +33,7 @@ const BlogSection = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {publishedPosts.map((post) => (
         <div key={post._id} className="relative px-3">
-          <div className="relative h-[319px] w-[108%] -ml-[4%]">
+          <div className="relative h-[319px] w-[97%] mx-auto z-10 -mt-3">
             <Image
               src={post.imageUrl}
               alt={post.title}
@@ -43,7 +43,7 @@ const BlogSection = () => {
               priority
             />
           </div>
-          <div className="rounded-[25px] z-[1] -mt-[95px] px-[15px] py-[90px] pb-[45px] relative bg-[#d4d5e1] w-[108%] -ml-[4%] min-h-[280px]">
+          <div className="rounded-[25px] z-[1] -mt-[95px] px-[15px] py-[90px] pt-[120px] pb-[45px] relative bg-[#d4d5e1] w-[108%] -ml-[4%] min-h-[280px]">
             <div className="text-sm text-gray-500 mb-4">
               {new Date(post.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
             </div>

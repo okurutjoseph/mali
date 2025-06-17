@@ -123,9 +123,9 @@ export default function Home() {
       {/* Our Services Section */}
       <section className="py-16 pb-32 bg-white text-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-12">
-            <span className="text-orange-500 block text-6xl font-bold">Our</span>
-            <span className="text-[#2c2c52] text-5xl font-bold">Services</span>
+          <h2 className="mb-12 flex flex-col items-center">
+            <span className="text-orange-500 text-6xl font-bold">Our</span>
+            <span className="text-[#2c2c52] text-6xl -mt-2">Services</span>
           </h2>
           <Slider {...settings}>
             {/* Service Card 1: Digital Marketing */}
@@ -392,7 +392,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-6xl mb-4 flex flex-col items-center">
-              <span className="text-orange-500">Marketing</span>
+              <span className="text-orange-500 font-bold">Marketing</span>
               <span className="text-[#2c2c52] -mt-2">Insights</span>
             </h2>
           </div>
