@@ -34,7 +34,7 @@ export const create = mutation({
     if (existingPost) {
       const count = await ctx.db
         .query("posts")
-        .filter((q) => q.startsWith(q.field("slug"), slug))
+        .filter((q) => q.eq(q.field("slug"), slug))
         .collect();
       finalSlug = `${slug}-${count.length + 1}`;
     }
@@ -103,7 +103,7 @@ export const update = mutation({
       if (existingSlug) {
         const count = await ctx.db
           .query("posts")
-          .filter((q) => q.startsWith(q.field("slug"), newSlug))
+          .filter((q) => q.eq(q.field("slug"), newSlug))
           .collect();
         finalSlug = `${newSlug}-${count.length + 1}`;
       }
