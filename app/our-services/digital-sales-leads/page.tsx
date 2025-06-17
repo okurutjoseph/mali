@@ -13,7 +13,7 @@ export default function DigitalSalesLeadsPage() {
         <ServiceTemplate 
           title="Digital Sales & Leads"
           description="Generate more leads and convert them into customers with our proven digital sales strategies and techniques. Our comprehensive approach helps you optimize your sales funnel and increase revenue."
-          image="/images/services/digital-Sales.png"
+          image="/images/about-left-img.png"
           buttonLink="/book-consultation"
         />
       </div>

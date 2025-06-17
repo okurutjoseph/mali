@@ -13,7 +13,7 @@ export default function MediaBuyingPage() {
         <ServiceTemplate 
           title="Media Buying"
           description="Maximize your advertising ROI with our strategic media buying services. We help you identify and secure the most effective advertising placements across digital platforms to reach your target audience."
-          image="/images/services/media-buying.png"
+          image="/images/about-left-img.png"
           buttonLink="/book-consultation"
         />
       </div>

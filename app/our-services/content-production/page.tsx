@@ -13,7 +13,7 @@ export default function ContentProductionPage() {
         <ServiceTemplate 
           title="Content Production"
           description="Create engaging and high-quality content that resonates with your target audience. Our content production services help you tell your brand story effectively and drive meaningful engagement."
-          image="/images/services/content-production.png"
+          image="/images/about-left-img.png"
           buttonLink="/book-consultation"
         />
       </div>

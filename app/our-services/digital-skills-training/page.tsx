@@ -13,7 +13,7 @@ export default function DigitalSkillsTrainingPage() {
         <ServiceTemplate 
           title="Digital Skills Training"
           description="Empower your team with essential digital marketing skills. Our comprehensive training programs cover everything from social media management to SEO, ensuring your team stays ahead in the digital landscape."
-          image="/images/services/digital-skills.png"
+          image="/images/about-left-img.png"
           buttonLink="/book-consultation"
         />
       </div>

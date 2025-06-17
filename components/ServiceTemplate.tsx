@@ -14,12 +14,12 @@ const ServiceTemplate = ({ title, description, image, buttonLink }: ServiceTempl
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left side - Image */}
-        <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+        <div className="relative w-full aspect-[4/3]">
           <Image
             src={image}
             alt={title}
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </div>

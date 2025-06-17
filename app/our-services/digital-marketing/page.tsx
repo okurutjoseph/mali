@@ -13,7 +13,7 @@ export default function DigitalMarketingPage() {
         <ServiceTemplate 
           title="Digital Marketing"
           description="Transform your online presence with our comprehensive digital marketing solutions tailored to your business goals. We help you reach your target audience, increase brand awareness, and drive measurable results."
-          image="/images/services/digital-marketing.png"
+          image="/images/about-left-img.png"
           buttonLink="/book-consultation"
         />
       </div>

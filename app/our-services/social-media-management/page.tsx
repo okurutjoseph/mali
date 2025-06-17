@@ -13,7 +13,7 @@ export default function SocialMediaManagementPage() {
         <ServiceTemplate 
           title="Social Media Management"
           description="Build and maintain a strong social media presence that engages your audience and drives business growth. Our expert team handles everything from content creation to community management."
-          image="/images/services/social-media.png"
+          image="/images/about-left-img.png"
           buttonLink="/book-consultation"
         />
       </div>

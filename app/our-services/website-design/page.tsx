@@ -13,7 +13,7 @@ export default function WebsiteDesignPage() {
         <ServiceTemplate 
           title="Website Design"
           description="Create a stunning and functional website that represents your brand. Our website design services focus on delivering user-friendly, responsive, and conversion-optimized websites that help you achieve your business goals."
-          image="/images/services/website-design.png"
+          image="/images/about-left-img.png"
           buttonLink="/book-consultation"
         />
       </div>
