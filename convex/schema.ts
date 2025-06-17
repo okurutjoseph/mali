@@ -21,7 +21,7 @@ export default defineSchema({
     published: v.boolean(),
     createdAt: v.number(),
     updatedAt: v.number(),
-    slug: v.string(),
+    slug: v.optional(v.string()),
   }).index("by_slug", ["slug"]),
   projectCategories: defineTable({
     name: v.string(),
@@ -31,14 +31,12 @@ export default defineSchema({
     name: v.string(),
     createdAt: v.number(),
   }),
-  blogs: defineTable({
-    title: v.string(),
-    description: v.string(),
-    content: v.string(),
-    image: v.string(),
-    date: v.string(),
-    views: v.number(),
-    slug: v.string(),
-    published: v.boolean(),
-  }).index("by_date", ["date"]),
+  testimonials: defineTable({
+    clientName: v.string(),
+    company: v.string(),
+    testimonial: v.string(),
+    rating: v.number(),
+    isActive: v.boolean(),
+    createdAt: v.number(),
+  }),
 });

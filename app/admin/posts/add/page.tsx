@@ -13,7 +13,8 @@ const AddPostPage = () => {
 
   const [formData, setFormData] = useState({
     title: '',
-    description: '',
+    content: '',
+    excerpt: '',
     category: '',
     imageUrl: '',
   });
@@ -29,9 +30,9 @@ const AddPostPage = () => {
     try {
       await createPost({
         title: formData.title,
-        content: formData.description,
+        content: formData.content,
         imageUrl: formData.imageUrl,
-        excerpt: formData.description.substring(0, 150) + '...',
+        excerpt: formData.excerpt,
         author: 'Admin',
         categories: [formData.category],
         published: true
@@ -80,11 +81,25 @@ const AddPostPage = () => {
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="description" className="block text-sm font-medium">Content</label>
+          <label htmlFor="excerpt" className="block text-sm font-medium">Excerpt</label>
           <textarea
-            id="description"
-            name="description"
-            value={formData.description}
+            id="excerpt"
+            name="excerpt"
+            value={formData.excerpt}
+            onChange={handleInputChange}
+            rows={2}
+            placeholder="Brief summary of the post (will be shown in blog cards)"
+            className="w-full px-3 py-2 border rounded-md"
+            required
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="content" className="block text-sm font-medium">Content</label>
+          <textarea
+            id="content"
+            name="content"
+            value={formData.content}
             onChange={handleInputChange}
             rows={5}
             className="w-full px-3 py-2 border rounded-md"

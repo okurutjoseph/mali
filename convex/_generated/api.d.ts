@@ -17,6 +17,7 @@ import type * as postCategories from "../postCategories.js";
 import type * as posts from "../posts.js";
 import type * as projectCategories from "../projectCategories.js";
 import type * as projects from "../projects.js";
+import type * as testimonials from "../testimonials.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -31,6 +32,7 @@ declare const fullApi: ApiFromModules<{
   posts: typeof posts;
   projectCategories: typeof projectCategories;
   projects: typeof projects;
+  testimonials: typeof testimonials;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

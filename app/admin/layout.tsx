@@ -48,6 +48,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                 Posts
               </Link>
             </li>
+            <li>
+              <Link href="/admin/testimonials" className="block px-4 py-2 hover:bg-gray-700">
+                Testimonials
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

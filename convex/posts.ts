@@ -1,5 +1,6 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
+import { Doc } from "./_generated/dataModel";
 
 // Helper function to generate slug from title
 const generateSlug = (title: string): string => {
@@ -7,6 +8,29 @@ const generateSlug = (title: string): string => {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)+/g, '');
+};
+
+// Helper function to ensure unique slug
+const ensureUniqueSlug = async (ctx: any, baseSlug: string, currentId?: string) => {
+  let slug = baseSlug;
+  let counter = 1;
+  let exists = true;
+
+  while (exists) {
+    const existing = await ctx.db
+      .query("posts")
+      .withIndex("by_slug", (q: any) => q.eq("slug", slug))
+      .first();
+    
+    exists = existing !== null && existing._id !== currentId;
+    
+    if (exists) {
+      slug = `${baseSlug}-${counter}`;
+      counter++;
+    }
+  }
+
+  return slug;
 };
 
 export const create = mutation({
@@ -20,41 +44,23 @@ export const create = mutation({
     published: v.boolean(),
   },
   handler: async (ctx, args) => {
-    const now = Date.now();
-    const slug = generateSlug(args.title);
+    const baseSlug = generateSlug(args.title);
+    const slug = await ensureUniqueSlug(ctx, baseSlug);
     
-    // Check if slug exists
-    const existingPost = await ctx.db
-      .query("posts")
-      .filter((q) => q.eq(q.field("slug"), slug))
-      .first();
-
-    // If slug exists, append a number
-    let finalSlug = slug;
-    if (existingPost) {
-      const count = await ctx.db
-        .query("posts")
-        .filter((q) => q.eq(q.field("slug"), slug))
-        .collect();
-      finalSlug = `${slug}-${count.length + 1}`;
-    }
-
-    const postId = await ctx.db.insert("posts", {
+    const now = Date.now();
+    return await ctx.db.insert("posts", {
       ...args,
-      slug: finalSlug,
+      slug,
       createdAt: now,
       updatedAt: now,
     });
-    return postId;
   },
 });
 
 export const list = query({
   handler: async (ctx) => {
-    return await ctx.db
-      .query("posts")
-      .order("desc")
-      .collect();
+    const posts = await ctx.db.query("posts").collect();
+    return posts;
   },
 });
 
@@ -80,54 +86,22 @@ export const update = mutation({
     published: v.boolean(),
   },
   handler: async (ctx, args) => {
-    const { id, title, ...rest } = args;
+    const { id, ...rest } = args;
+    const baseSlug = generateSlug(args.title);
+    const slug = await ensureUniqueSlug(ctx, baseSlug, id);
     
-    // Only update slug if title changes
-    const existingPost = await ctx.db.get(id);
-    if (existingPost && existingPost.title !== title) {
-      const newSlug = generateSlug(title);
-      
-      // Check if new slug exists (excluding current post)
-      const existingSlug = await ctx.db
-        .query("posts")
-        .filter((q) => 
-          q.and(
-            q.eq(q.field("slug"), newSlug),
-            q.neq(q.field("_id"), id)
-          )
-        )
-        .first();
-
-      // If slug exists, append a number
-      let finalSlug = newSlug;
-      if (existingSlug) {
-        const count = await ctx.db
-          .query("posts")
-          .filter((q) => q.eq(q.field("slug"), newSlug))
-          .collect();
-        finalSlug = `${newSlug}-${count.length + 1}`;
-      }
-
-      await ctx.db.patch(id, {
-        title,
-        slug: finalSlug,
-        ...rest,
-        updatedAt: Date.now(),
-      });
-    } else {
-      await ctx.db.patch(id, {
-        title,
-        ...rest,
-        updatedAt: Date.now(),
-      });
-    }
+    await ctx.db.patch(id, {
+      ...rest,
+      slug,
+      updatedAt: Date.now(),
+    });
   },
 });
 
 export const remove = mutation({
   args: { id: v.id("posts") },
-  handler: async (ctx, { id }) => {
-    await ctx.db.delete(id);
+  handler: async (ctx, args) => {
+    await ctx.db.delete(args.id);
   },
 });
 
@@ -142,5 +116,24 @@ export const togglePublish = mutation({
       published,
       updatedAt: Date.now(),
     });
+  },
+});
+
+// Function to update existing posts with slugs
+export const updateExistingSlugs = mutation({
+  handler: async (ctx) => {
+    const posts = await ctx.db.query("posts").collect();
+    
+    for (const post of posts) {
+      if (!post.slug) {
+        const baseSlug = generateSlug(post.title);
+        const slug = await ensureUniqueSlug(ctx, baseSlug, post._id);
+        
+        await ctx.db.patch(post._id, {
+          slug,
+          updatedAt: Date.now(),
+        });
+      }
+    }
   },
 });

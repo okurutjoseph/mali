@@ -379,6 +379,70 @@ export default function Home() {
           <BlogSection />
         </div>
       </section>
+
+      {/* Our Happy Clients Section */}
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)' }}>
+        <div className="container mx-auto px-4">
+          <h2 className="text-center mb-16">
+            <span className="text-[#ff6900] text-6xl font-bold">Our Happy</span>
+            <span className="text-white text-6xl font-bold ml-4">Clients</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Testimonial 1 */}
+            <div className="bg-[#1e1b4b] rounded-lg p-8">
+              <div className="mb-4">
+                <h3 className="text-white text-2xl font-semibold">Babatunde, F.</h3>
+                <p className="text-gray-400">VDT Communications</p>
+                <div className="flex mt-2">
+                  {[1, 2, 3, 4].map((star) => (
+                    <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                  <svg className="w-5 h-5 text-gray-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+              </div>
+              <p className="text-white italic">Ziza Digital was professional, thorough and responsive all through the design, coding and hosting of our new website. We are pleased with the quality of work done as they went over and above the call of duty to delight us. We will be keep using them without thinking twice about it.</p>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-[#1e1b4b] rounded-lg p-8">
+              <div className="mb-4">
+                <h3 className="text-white text-2xl font-semibold">Aderuku, O.</h3>
+                <p className="text-gray-400">Bukka Hut</p>
+                <div className="flex mt-2">
+                  {[1, 2, 3, 4].map((star) => (
+                    <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                  <svg className="w-5 h-5 text-gray-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+              </div>
+              <p className="text-white italic">Ziza Digital understands her clients needs perfectly and at every step of the way, the agency creates high-impact digital marketing solutions that adequately addresses the clients' objectives. A team of young and passionate professionals, Ziza Digital is strongly recommended for companies seeking to hire a Digital Marketing agency.</p>
+            </div>
+          </div>
+
+          {/* Navigation Dots */}
+          <div className="flex justify-center items-center mt-12 gap-4">
+            <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors">
+              <svg className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group hover:border-white/50 transition-colors">
+              <svg className="w-6 h-6 text-white/30 group-hover:text-white/50 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
