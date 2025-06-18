@@ -317,7 +317,7 @@ export default function Home() {
               {/* Client Logo 8 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/logo8.png" 
+                  src="/images/clients/trenic.webp" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
@@ -328,7 +328,7 @@ export default function Home() {
               {/* Client Logo 9 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/logo9.png" 
+                  src="/images/clients/mint-africa.webp" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
