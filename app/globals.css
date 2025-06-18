@@ -22,10 +22,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Heading styles */
+h2 {
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 60px;
+  color: #2c2c52;
+  font-family: var(--font-poppins), sans-serif;
+}
+
 h4 {
   font-size: 30px;
   font-weight: 700;
   line-height: 35px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+h5 {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
   font-family: var(--font-poppins), sans-serif;
 }
 

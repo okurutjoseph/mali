@@ -7,35 +7,20 @@ import ServiceTemplate from '@/components/ServiceTemplate';
 export default function AboutUsPage() {
   const teamMembers = [
     {
-      name: "ADRONS IPENYE",
+      name: "ENGOLE FRANCIS",
       role: "Digital Marketing Specialist",
-      image: "/images/team/team1.jpg"
+      image: "/images/team/AGBONS-IGIEWE-1.jpg"
     },
     {
-      name: "DONNA D'AMICO",
+      name: "OKURUT JOSEPH",
       role: "Content Strategist",
-      image: "/images/team/team2.jpg"
+      image: "/images/team/UJUNWA-ONUEGBU-1.jpg"
     },
     {
-      name: "UJUNWA ONUSOGU",
+      name: "ONGOM JOHN",
       role: "Social Media Manager",
-      image: "/images/team/team3.jpg"
+      image: "/images/team/Donna-DAmico-resize.png"
     },
-    {
-      name: "SAYO ALONGE",
-      role: "Web Developer",
-      image: "/images/team/team4.jpg"
-    },
-    {
-      name: "ADEDOYIN ADEFISAN",
-      role: "SEO Specialist",
-      image: "/images/team/team5.jpg"
-    },
-    {
-      name: "KEHINDE AKINOLA",
-      role: "Project Manager",
-      image: "/images/team/team6.jpg"
-    }
   ];
 
   return (
@@ -128,7 +113,6 @@ export default function AboutUsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold mb-4">Our Team</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Meet our talented team of professionals who are dedicated to delivering exceptional results for our clients.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -138,7 +122,7 @@ export default function AboutUsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-lg overflow-hidden shadow-lg"
+                className="overflow-hidden shadow-lg"
               >
                 <div className="relative h-80 w-full">
                   <Image
@@ -149,18 +133,18 @@ export default function AboutUsPage() {
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                  <h3 className="text-xl font-[800] text-[#333] mb-2">{member.name}</h3>
                   <p className="text-gray-600">{member.role}</p>
                   <div className="flex justify-center space-x-4 mt-4">
-                    <a href="#" className="text-gray-600 hover:text-blue-600">
+                    <a href="#" className="text-black border-2 border-black rounded-full p-2 hover:bg-black hover:text-white transition-all duration-300">
                       <span className="sr-only">LinkedIn</span>
-                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                       </svg>
                     </a>
-                    <a href="#" className="text-gray-600 hover:text-blue-400">
+                    <a href="#" className="text-black border-2 border-black rounded-full p-2 hover:bg-black hover:text-white transition-all duration-300">
                       <span className="sr-only">Twitter</span>
-                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
                       </svg>
                     </a>
