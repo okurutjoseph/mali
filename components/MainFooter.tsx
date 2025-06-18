@@ -43,7 +43,7 @@ const MainFooter = () => {
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>DIGITAL MARKETING</span>
                 </Link>
-                <Link href="#" className="flex items-center">
+                <Link href="/our-services/digital-sales-leads" className="flex items-center">
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>DIGITAL SALES & LEADS</span>
                 </Link>
