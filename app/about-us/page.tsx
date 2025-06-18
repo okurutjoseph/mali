@@ -68,51 +68,51 @@ export default function AboutUsPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="bg-white p-8 rounded-lg shadow-lg text-center"
+              className="bg-gradient-to-r from-[#251146] to-[#aa2b4c] p-[40px_47px_34px] min-h-[400px] my-[15px] shadow-lg text-center text-white"
             >
               <Image
-                src="/images/icons/experience.png"
+                src="/images/experience.png"
                 alt="Our Experience"
-                width={64}
-                height={64}
+                width={96}
+                height={96}
                 className="mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold mb-3">OUR EXPERIENCE</h3>
-              <p className="text-gray-600">Some of our team members have been in the marketing and technology industry for at least 10 years. This blend of traditional marketing experience ensures that Ziza Digital understands the language of the past, yet fluent in the lingo of the future</p>
+              <h3 className="text-2xl font-bold mb-3 text-white">OUR EXPERIENCE</h3>
+              <p className="text-white">Some of our team members have been in the marketing and technology industry for at least 10 years. This blend of traditional marketing experience ensures that Ziza Digital understands the language of the past, yet fluent in the lingo of the future</p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white p-8 rounded-lg shadow-lg text-center"
+              className="bg-gradient-to-r from-[#251146] to-[#aa2b4c] p-[40px_47px_34px] min-h-[400px] mt-[58px] ml-[1%] shadow-lg text-center text-white"
             >
               <Image
-                src="/images/icons/expertise.png"
+                src="/images/expertise.png"
                 alt="Our Expertise"
-                width={64}
-                height={64}
+                width={96}
+                height={96}
                 className="mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold mb-3">OUR EXPERTISE</h3>
-              <p className="text-gray-600">We are powered by a multidisciplinary team of expert marketers, Content Writers, Social Media Managers, Art Directors, Web Developers, Strategists etc. We leverage on their unique skill sets to develop communications that meet the need of discerning clients.</p>
+              <h3 className="text-2xl font-bold mb-3 text-white">OUR EXPERTISE</h3>
+              <p className="text-white">We are powered by a multidisciplinary team of expert marketers, Content Writers, Social Media Managers, Art Directors, Web Developers, Strategists etc. We leverage on their unique skill sets to develop communications that meet the need of discerning clients.</p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-white p-8 rounded-lg shadow-lg text-center"
+              className="bg-gradient-to-r from-[#251146] to-[#aa2b4c] p-[40px_47px_34px] min-h-[400px] my-[15px] ml-[1%] shadow-lg text-center text-white"
             >
                 <Image
-                src="/images/icons/work-model.png"
+                src="/images/work-model.png"
                 alt="Our Work Model"
-                width={64}
-                height={64}
+                width={96}
+                height={96}
                 className="mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold mb-3">OUR WORK MODEL</h3>
-              <p className="text-gray-600">We learn about your business from you, we learn about your prospects from research and we learn about your competitors from experience. We combine these insights to create unique marketing experiences for your prospects and clients.</p>
+              <h3 className="text-2xl font-bold mb-3 text-white">OUR WORK MODEL</h3>
+              <p className="text-white">We learn about your business from you, we learn about your prospects from research and we learn about your competitors from experience. We combine these insights to create unique marketing experiences for your prospects and clients.</p>
             </motion.div>
           </div>
         </div>
