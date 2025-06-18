@@ -74,7 +74,7 @@ const SecondaryFooter = () => {
             <div className="services-column flex flex-col md:border-l md:border-r border-gray-600 md:px-6">
               <h3 className="text-xl mb-6 pb-2 border-b border-gray-600">Services</h3>
               <div className="grid grid-cols-1 gap-4">
-                <Link href="#" className="flex items-center">
+                <Link href="/our-services/digital-marketing" className="flex items-center">
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>DIGITAL MARKETING</span>
                 </Link>
@@ -82,11 +82,11 @@ const SecondaryFooter = () => {
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>DIGITAL SALES & LEADS</span>
                 </Link>
-                <Link href="#" className="flex items-center">
+                <Link href="/our-services/social-media-management" className="flex items-center">
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>SOCIAL MEDIA MANAGEMENT</span>
                 </Link>
-                <Link href="#" className="flex items-center">
+                <Link href="/our-services/content-production" className="flex items-center">
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>CONTENT PRODUCTION</span>
                 </Link>
@@ -97,15 +97,15 @@ const SecondaryFooter = () => {
             <div className="services-column flex flex-col">
               <h3 className="text-xl mb-6 pb-2 border-b border-gray-600 md:opacity-0">Services</h3> {/* Invisible header for alignment with border */}
               <div className="grid grid-cols-1 gap-4">
-                <Link href="#" className="flex items-center">
+                <Link href="/our-services/media-buying" className="flex items-center">
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>MEDIA BUYING</span>
                 </Link>
-                <Link href="#" className="flex items-center">
+                <Link href="/our-services/website-design" className="flex items-center">
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>WEBSITE DESIGN</span>
                 </Link>
-                <Link href="#" className="flex items-center">
+                <Link href="/our-services/digital-skills-training" className="flex items-center">
                   <span className="text-orange-500 mr-2">▶</span>
                   <span>DIGITAL SKILLS TRAINING</span>
                 </Link>
