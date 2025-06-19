@@ -20,7 +20,7 @@ const Header = () => {
       <div className="w-full" style={{ backgroundColor: '#ff2a0f' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-end h-10">
           <div className="flex space-x-4 text-white text-sm">
-            <Link href="#" className="hover:text-gray-200">Contact Us</Link>
+            <Link href="/contact-us" className="hover:text-gray-200">Contact Us</Link>
           </div>
         </div>
       </div>
