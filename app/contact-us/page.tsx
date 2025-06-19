@@ -40,7 +40,7 @@ export default function ContactUs() {
                     <h3 className="font-bold mb-1">Email address</h3>
                     <p>info@malidigitalagency.com</p>
                   </div>
-                </div>
+        </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center flex-shrink-0">
@@ -54,9 +54,9 @@ export default function ContactUs() {
                   </div>
                 </div>
               </div>
-            </div>
+        </div>
 
-            {/* Contact Form */}
+          {/* Contact Form */}
             <div className="bg-gradient-to-r from-[#251146] to-[#aa2b4c] p-8 rounded-xl text-white">
                              <h3 className="text-[35px] font-[800] mb-[15px] text-white leading-[40px] text-center">Contact Us</h3>
               <form className="space-y-6 pb-4">
@@ -69,33 +69,33 @@ export default function ContactUs() {
                 </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Last Name</label>
-                  <input
-                    type="text"
+                <input
+                  type="text"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Email Address</label>
-                  <input
-                    type="email"
+                <input
+                  type="email"
                     placeholder="e.g yo@company.com"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Company Name</label>
-                  <input
-                    type="text"
+                <input
+                  type="text"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Phone Number</label>
                   <input
                     type="tel"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Message</label>
                   <textarea
@@ -105,12 +105,12 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <div className="g-recaptcha mb-4" data-sitekey="your_site_key"></div>
-                  <button
-                    type="submit"
+              <button
+                type="submit"
                     className="bg-[#ff7a59] border border-[#ff7a59] text-white px-8 py-3 text-[12px] leading-[12px] hover:bg-opacity-90 transition-all duration-300 rounded-md"
-                  >
+              >
                     Contact Us
-                  </button>
+              </button>
                 </div>
               </form>
             </div>
@@ -119,4 +119,4 @@ export default function ContactUs() {
       </section>
     </>
   );
-}
+} 
