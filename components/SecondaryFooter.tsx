@@ -11,7 +11,7 @@ const SecondaryFooter = () => {
       <section className="relative pt-20 pb-20">
         <div className="absolute top-0 left-0 w-full">
           <Image
-            src="/images/brend-bg.png"
+            src="/images/wave.png"
             alt="Wave Background"
             width={1920}
             height={200}

@@ -356,7 +356,7 @@ export default function Home() {
       <section className="relative w-full py-20 overflow-visible bg-blue-900 text-white" style={{ minHeight: '700px', zIndex: 2 }}>
         {/* Background Image */}
         <Image
-          src="/images/get-startsec.jpg"
+          src="/images/get-started.png"
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -404,7 +404,7 @@ export default function Home() {
       {/* Our Happy Clients Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-[#0e155b]"></div>
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/bluesec.jpg')] bg-no-repeat bg-left bg-contain opacity-60"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-contain opacity-60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-center mb-16">
             <span className="text-[#ff6900] text-6xl font-bold">Our Happy</span>
