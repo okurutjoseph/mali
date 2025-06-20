@@ -146,7 +146,7 @@ export default function Home() {
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-sales.png" alt="Digital Marketing Icon" width={64} height={64} /> 
+                  <Image src="/images/services/digital-sales-&-leads.png" alt="Digital Marketing Icon" width={64} height={64} /> 
                 </div>
                 <h4 className="mb-4">Digital Sales & Leads</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
@@ -160,7 +160,7 @@ export default function Home() {
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/social-media.png" alt="Social Media Management Icon" width={64} height={64} /> 
+                  <Image src="/images/services/social-media-management.png" alt="Social Media Management Icon" width={64} height={64} /> 
                 </div>
                 <h4 className="mb-4">Social Media Management</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
@@ -216,7 +216,7 @@ export default function Home() {
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
                 <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-skills.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
+                  <Image src="/images/services/digital-skills-training.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
                 </div>
                 <h4 className="mb-4">Digital Skills Training</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
