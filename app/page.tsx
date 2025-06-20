@@ -240,7 +240,7 @@ export default function Home() {
               {/* Client Logo 1 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/macho.webp" 
+                  src="/images/clients/macho.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
@@ -251,7 +251,7 @@ export default function Home() {
               {/* Client Logo 2 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/nishati.webp" 
+                  src="/images/clients/nishati.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
@@ -262,7 +262,7 @@ export default function Home() {
               {/* Client Logo 3 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/level.webp" 
+                  src="/images/clients/level0.png" 
                   alt="Client Logo" 
                   width={80} 
                   height={40} 
@@ -273,10 +273,10 @@ export default function Home() {
               {/* Client Logo 4 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/tabra-uganda.webp" 
+                  src="/images/clients/easy-housing.png" 
                   alt="Client Logo" 
-                  width={80} 
-                  height={40} 
+                  width={120} 
+                  height={60} 
                   objectFit="contain"
                   className="transition-transform duration-300 hover:scale-110"
                 />
@@ -284,7 +284,7 @@ export default function Home() {
               {/* Client Logo 5 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/true-african.webp" 
+                  src="/images/clients/true-african.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
@@ -295,7 +295,7 @@ export default function Home() {
               {/* Client Logo 6 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/easy-housing.webp" 
+                  src="/images/clients/precision-hr.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
@@ -306,7 +306,7 @@ export default function Home() {
               {/* Client Logo 7 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/precision.webp" 
+                  src="/images/clients/trenic-properties.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
@@ -317,7 +317,7 @@ export default function Home() {
               {/* Client Logo 8 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/trenic.webp" 
+                  src="/images/clients/mint-africa.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
@@ -328,7 +328,7 @@ export default function Home() {
               {/* Client Logo 9 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/mint-africa.webp" 
+                  src="/images/clients/logo12.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
