@@ -21,6 +21,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Digital Marketing Agency in Uganda - Mali Digital Agency",
   description: "We focus on Digital marketing, social media management, content production, media buying, website design and digital skills training",
+  verification: {
+    google: "1wCNTGf6GPhm4CL9M1yiKgeyc4xOc0LYKer0IoAIv4M",
+  },
 };
 
 export default function RootLayout({
