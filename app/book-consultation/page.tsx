@@ -55,7 +55,7 @@ export default function BookConsultation() {
                 </div>
                 <p className="text-[#2c2c52] mt-6 font-medium">If you are looking to achieve any of the objectives listed above, then book a free consultation and let's x-ray your business together.</p>
               </div>
-            </div>
+        </div>
 
             {/* Contact Form */}
             <div className="bg-gradient-to-r from-[#251146] to-[#aa2b4c] p-8 rounded-xl text-white">
@@ -70,15 +70,15 @@ export default function BookConsultation() {
                 </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Last Name</label>
-                  <input
-                    type="text"
+                <input
+                  type="text"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Email Address</label>
-                  <input
-                    type="email"
+                <input
+                  type="email"
                     placeholder="e.g yo@company.com"
                     className="w-full px-4 py-3 bg-white text-black"
                   />
@@ -88,43 +88,43 @@ export default function BookConsultation() {
                   <input
                     type="text"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Phone Number</label>
-                  <input
-                    type="tel"
+                <input
+                  type="tel"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">Website URL</label>
-                  <input
+                <input
                     type="url"
                     className="w-full px-4 py-3 bg-white text-black"
-                  />
-                </div>
+                />
+              </div>
                 <div className="space-y-2">
                   <label className="block text-sm text-white">What do you need help with?</label>
-                  <textarea
-                    rows={4}
+                <textarea
+                  rows={4}
                     className="w-full px-4 py-3 bg-white text-black"
                   ></textarea>
-                </div>
+              </div>
                 <div>
                   <div className="g-recaptcha mb-4" data-sitekey="your_site_key"></div>
-                  <button
-                    type="submit"
+              <button
+                type="submit"
                     className="bg-[#ff7a59] border border-[#ff7a59] text-white px-8 py-3 text-[12px] leading-[12px] hover:bg-opacity-90 transition-all duration-300 rounded-md"
-                  >
+              >
                     Book Consultation
-                  </button>
+              </button>
                 </div>
-              </form>
+            </form>
+              </div>
             </div>
-          </div>
         </div>
       </section>
     </>
   );
-}
+} 

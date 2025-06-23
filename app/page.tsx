@@ -91,19 +91,21 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 bg-blue-900 text-white">
-        <div className="container mx-auto px-4">
+      <section className="pt-16 pb-0 relative">
+        <div className="absolute inset-0 bg-[#0e155b]"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-bottom opacity-60"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
+            <div className="h-full">
               <Image
                 src="/images/imgs-55.png"
                 alt="About Mali Digital"
                 width={768}
                 height={512}
-                className="shadow-md"
+                className="shadow-md h-full object-contain"
               />
             </div>
-            <div className="text-left">
+            <div className="text-left text-white">
               <h3 className="text-[60px] font-[400] mb-6 leading-[1]">
                 About<br />
                 Mali Digital Agency
@@ -353,7 +355,7 @@ export default function Home() {
       </div>
 
       {/* Get Started Section */}
-      <section className="relative w-full py-20 overflow-visible bg-blue-900 text-white" style={{ minHeight: '700px', zIndex: 2 }}>
+      <section className="relative w-full pt-95 pb-20 overflow-visible bg-blue-900 -mt-64" style={{ minHeight: '700px', zIndex: 2 }}>
         {/* Background Image */}
         <Image
           src="/images/get-started.png"
@@ -366,7 +368,10 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-4 mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get Started with Marketing<br />for your brand</h2>
+          {/* Vertical Line */}
+          <div className="w-[1px] h-[60px] bg-[#ffffff] mb-6"></div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#ffffff]">Get Started with Marketing<br />for your brand</h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl">Transform your business with professional marketing ideated and implemented by experts with deep market experience.</p>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition text-lg">GET STARTED</button>
         </div>
