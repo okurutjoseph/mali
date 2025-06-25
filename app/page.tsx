@@ -96,7 +96,7 @@ export default function Home() {
         <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-bottom opacity-60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="h-full">
+            <div className="h-full hidden sm:block">
               <Image
                 src="/images/imgs-55.png"
                 alt="About Mali Digital"
@@ -238,7 +238,7 @@ export default function Home() {
             <h2 className="text-white mb-12 text-[60px] font-[400] leading-tight">
               <strong>Some</strong> of Our Clients
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-[2.5641%]">
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-[2.5641%]">
               {/* Client Logo 1 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
