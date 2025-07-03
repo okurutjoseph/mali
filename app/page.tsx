@@ -330,7 +330,7 @@ export default function Home() {
               {/* Client Logo 9 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
-                  src="/images/clients/logo12.png" 
+                  src="/images/clients/nishati-business.png" 
                   alt="Client Logo" 
                   width={120} 
                   height={60} 
