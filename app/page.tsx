@@ -1,11 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
 import PrimaryButton from '@/components/PrimaryButton';
 import BlogSection from '../components/BlogSection';
 import { useQuery } from 'convex/react';
 import { api } from '@/convex/_generated/api';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -57,6 +59,46 @@ export default function Home() {
     className: "py-8"
   };
 
+  // About Us Section Animation
+  const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.6 });
+  const aboutControls = useAnimation();
+  useEffect(() => {
+    if (aboutInView) {
+      aboutControls.start({ opacity: 1, x: 0 });
+    }
+  }, [aboutInView, aboutControls]);
+
+  // Our Services Section Animation
+  const [servicesRef, servicesInView] = useInView({ triggerOnce: true, threshold: 0.5 });
+  const servicesHeadingControls = useAnimation();
+  const servicesCardsControls = useAnimation();
+  useEffect(() => {
+    if (servicesInView) {
+      servicesHeadingControls.start({ opacity: 1, y: 0 });
+      setTimeout(() => {
+        servicesCardsControls.start({ opacity: 1, y: 0 });
+      }, 500);
+    }
+  }, [servicesInView, servicesHeadingControls, servicesCardsControls]);
+
+  // Our Clients Section Animation
+  const [clientsRef, clientsInView] = useInView({ triggerOnce: true, threshold: 0.5 });
+  const clientsControls = useAnimation();
+  useEffect(() => {
+    if (clientsInView) {
+      clientsControls.start({ opacity: 1, y: 0 });
+    }
+  }, [clientsInView, clientsControls]);
+
+  // Get Started Section Animation
+  const [getStartedRef, getStartedInView] = useInView({ triggerOnce: true, threshold: 0.5 });
+  const getStartedControls = useAnimation();
+  useEffect(() => {
+    if (getStartedInView) {
+      getStartedControls.start({ opacity: 1, x: 0 });
+    }
+  }, [getStartedInView, getStartedControls]);
+
   return (
     <div className="relative" style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
@@ -85,18 +127,30 @@ export default function Home() {
               className="mb-8"
               priority
             />
-            <button className="bg-lime-500 hover:bg-lime-600 text-black font-semibold px-8 py-3 rounded-full transition text-lg">Get Started</button>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              <button className="bg-lime-500 hover:bg-lime-600 text-black font-semibold px-8 py-3 rounded-full transition text-lg">Get Started</button>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className="pt-16 pb-0 relative">
+      <section className="pt-16 pb-0 relative" ref={aboutRef}>
         <div className="absolute inset-0 bg-[#0e155b]"></div>
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-bottom opacity-60"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-[left_bottom] opacity-60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="h-full hidden sm:block">
+            <motion.div
+              animate={aboutControls}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="h-full hidden sm:block"
+            >
               <Image
                 src="/images/imgs-55.png"
                 alt="About Mali Digital"
@@ -104,8 +158,13 @@ export default function Home() {
                 height={512}
                 className="shadow-md h-full object-contain"
               />
-            </div>
-            <div className="text-left text-white">
+            </motion.div>
+            <motion.div
+              animate={aboutControls}
+              initial={{ opacity: 0, x: 100 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="text-left text-white"
+            >
               <h3 className="text-[60px] font-[400] mb-6 leading-[1]">
                 About<br />
                 Mali Digital Agency
@@ -114,7 +173,7 @@ export default function Home() {
               <p className="mb-4">With offices in Uganda, Mali Digital Agency leverages its multidisciplinary team's unique skill sets and broad experience across industries to help clients across the world.</p>
               <p className="mb-4">Need help with creating awareness for your brand, connecting with your target audience, or generating leads?</p>
               <PrimaryButton>Book a Consultation</PrimaryButton>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -123,122 +182,143 @@ export default function Home() {
       <div className="absolute left-1/2 transform -translate-x-1/2" style={{ top: '437.5px', height: '125px', width: '1px', background: '#fff' }}></div>
 
       {/* Our Services Section */}
-      <section className="py-16 pb-32 bg-white text-gray-800">
+      <section className="py-16 pb-32 bg-white text-gray-800" ref={servicesRef}>
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-12 flex flex-col items-center">
+          <motion.h2
+            className="mb-12 flex flex-col items-center"
+            initial={{ opacity: 0, y: 40 }}
+            animate={servicesHeadingControls}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
             <span className="text-orange-500 text-6xl font-bold">Our</span>
             <span className="text-[#2c2c52] text-6xl -mt-2">Services</span>
-          </h2>
-          <Slider {...settings}>
-            {/* Service Card 1: Digital Marketing */}
-            <div className="px-2 mb-8">
-              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-marketing.png" alt="Digital Marketing Icon" width={64} height={64} /> 
-                </div>
-                <h4 className="mb-4">Digital Marketing</h4>
-                <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
-                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
-                  <PrimaryButton>READ MORE</PrimaryButton>
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={servicesCardsControls}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <Slider {...settings}>
+              {/* Service Card 1: Digital Marketing */}
+              <div className="px-2 mb-8">
+                <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
+                  <div className="flex items-center justify-center mb-6">
+                    <Image src="/images/services/digital-marketing.png" alt="Digital Marketing Icon" width={64} height={64} /> 
+                  </div>
+                  <h4 className="mb-4">Digital Marketing</h4>
+                  <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
+                  <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                    <PrimaryButton>READ MORE</PrimaryButton>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Service Card 2: Digital Sales & Leads */}
-            <div className="px-2 mb-8">
-              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-sales-&-leads.png" alt="Digital Marketing Icon" width={64} height={64} /> 
-                </div>
-                <h4 className="mb-4">Digital Sales & Leads</h4>
-                <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
-                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
-                  <PrimaryButton>READ MORE</PrimaryButton>
+              {/* Service Card 2: Digital Sales & Leads */}
+              <div className="px-2 mb-8">
+                <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
+                  <div className="flex items-center justify-center mb-6">
+                    <Image src="/images/services/digital-sales-&-leads.png" alt="Digital Marketing Icon" width={64} height={64} /> 
+                  </div>
+                  <h4 className="mb-4">Digital Sales & Leads</h4>
+                  <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
+                  <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                    <PrimaryButton>READ MORE</PrimaryButton>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Service Card 3: Social Media Management */}
-            <div className="px-2 mb-8">
-              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/social-media-management.png" alt="Social Media Management Icon" width={64} height={64} /> 
-                </div>
-                <h4 className="mb-4">Social Media Management</h4>
-                <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
-                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
-                  <PrimaryButton>READ MORE</PrimaryButton>
+              {/* Service Card 3: Social Media Management */}
+              <div className="px-2 mb-8">
+                <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
+                  <div className="flex items-center justify-center mb-6">
+                    <Image src="/images/services/social-media-management.png" alt="Social Media Management Icon" width={64} height={64} /> 
+                  </div>
+                  <h4 className="mb-4">Social Media Management</h4>
+                  <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
+                  <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                    <PrimaryButton>READ MORE</PrimaryButton>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Service Card 4: Content Production */}
-            <div className="px-2 mb-8">
-              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/content-production.png" alt="Content Production Icon" width={64} height={64} /> 
-                </div>
-                <h4 className="mb-4">Content Production</h4>
-                <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
-                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
-                  <PrimaryButton>READ MORE</PrimaryButton>
+              {/* Service Card 4: Content Production */}
+              <div className="px-2 mb-8">
+                <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
+                  <div className="flex items-center justify-center mb-6">
+                    <Image src="/images/services/content-production.png" alt="Content Production Icon" width={64} height={64} /> 
+                  </div>
+                  <h4 className="mb-4">Content Production</h4>
+                  <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
+                  <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                    <PrimaryButton>READ MORE</PrimaryButton>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Service Card 5 Media Buying */}
-            <div className="px-2 mb-8">
-              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/media-buying.png" alt="Media Buying Icon" width={64} height={64} /> 
-                </div>
-                <h4 className="mb-4">Media Buying</h4>
-                <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
-                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
-                  <PrimaryButton>READ MORE</PrimaryButton>
+              {/* Service Card 5 Media Buying */}
+              <div className="px-2 mb-8">
+                <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
+                  <div className="flex items-center justify-center mb-6">
+                    <Image src="/images/services/media-buying.png" alt="Media Buying Icon" width={64} height={64} /> 
+                  </div>
+                  <h4 className="mb-4">Media Buying</h4>
+                  <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
+                  <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                    <PrimaryButton>READ MORE</PrimaryButton>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Service Card 6 Website Design */}
-            <div className="px-2 mb-8">
-              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/website-design.png" alt="Website Design Icon" width={64} height={64} /> 
-                </div>
-                <h4 className="mb-4">Website Design</h4>
-                <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
-                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
-                  <PrimaryButton>READ MORE</PrimaryButton>
+              {/* Service Card 6 Website Design */}
+              <div className="px-2 mb-8">
+                <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
+                  <div className="flex items-center justify-center mb-6">
+                    <Image src="/images/services/website-design.png" alt="Website Design Icon" width={64} height={64} /> 
+                  </div>
+                  <h4 className="mb-4">Website Design</h4>
+                  <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
+                  <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                    <PrimaryButton>READ MORE</PrimaryButton>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Service Card 7 Digital Skills Training */}
-            <div className="px-2 mb-8">
-              <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-skills-training.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
-                </div>
-                <h4 className="mb-4">Digital Skills Training</h4>
-                <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
-                <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
-                  <PrimaryButton>READ MORE</PrimaryButton>
+              {/* Service Card 7 Digital Skills Training */}
+              <div className="px-2 mb-8">
+                <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
+                  <div className="flex items-center justify-center mb-6">
+                    <Image src="/images/services/digital-skills-training.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
+                  </div>
+                  <h4 className="mb-4">Digital Skills Training</h4>
+                  <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
+                  <div className="absolute left-1/2 -bottom-5 transform -translate-x-1/2">
+                    <PrimaryButton>READ MORE</PrimaryButton>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Slider>
+            </Slider>
+          </motion.div>
         </div>
       </section>
 
       {/* Some of Our Clients Section Wrapper */}
-      <div className="relative z-10 rounded-lg shadow-xl mx-auto w-11/12 -mt-16" style={{ background: '#ff6900' }}>
+      <div className="relative z-10 rounded-lg shadow-xl mx-auto w-11/12 -mt-16" style={{ background: '#ff6900' }} ref={clientsRef}>
         <section className="py-10 text-gray-800">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-white mb-12 text-[60px] font-[400] leading-tight">
+            <motion.h2
+              className="text-white mb-12 text-[60px] font-[400] leading-tight"
+              initial={{ opacity: 0, y: 40 }}
+              animate={clientsControls}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+            >
               <strong>Some</strong> of Our Clients
-            </h2>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-[2.5641%]">
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={clientsControls}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="grid grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-[2.5641%]"
+            >
               {/* Client Logo 1 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
@@ -349,13 +429,13 @@ export default function Home() {
                   className="transition-transform duration-300 hover:scale-110"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>
 
       {/* Get Started Section */}
-      <section className="relative w-full pt-95 pb-20 overflow-visible bg-blue-900 -mt-64" style={{ minHeight: '700px', zIndex: 2 }}>
+      <section className="relative w-full pt-95 pb-20 overflow-visible bg-blue-900 -mt-64" style={{ minHeight: '700px', zIndex: 2 }} ref={getStartedRef}>
         {/* Background Image */}
         <Image
           src="/images/get-started.png"
@@ -367,17 +447,28 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-4 mb-12">
+        <motion.div
+          className="relative z-10 flex flex-col items-center text-center px-4 mb-12"
+          initial={{ opacity: 0, x: -100 }}
+          animate={getStartedControls}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           {/* Vertical Line */}
           <div className="w-[1px] h-[60px] bg-[#ffffff] mb-6"></div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#ffffff]">Get Started with Marketing<br />for your brand</h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl">Transform your business with professional marketing ideated and implemented by experts with deep market experience.</p>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition text-lg">GET STARTED</button>
-        </div>
+        </motion.div>
 
         {/* Person Image */}
-        <div className="absolute -bottom-56 left-1/2 transform -translate-x-1/2" style={{ zIndex: 9999 }}>
+        <motion.div
+          className="absolute -bottom-56 left-1/2 transform -translate-x-1/2"
+          style={{ zIndex: 9999 }}
+          initial={{ opacity: 0, x: -100 }}
+          animate={getStartedControls}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <div className="relative">
             <Image
               src="/images/image.png"
@@ -389,7 +480,7 @@ export default function Home() {
               objectFit="contain"
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Marketing Insights Blog Section */}
@@ -409,7 +500,7 @@ export default function Home() {
       {/* Our Happy Clients Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-[#0e155b]"></div>
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-contain opacity-60"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-[left_bottom] opacity-60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-center mb-16">
             <span className="text-[#ff6900] text-6xl font-bold">Our Happy</span>
