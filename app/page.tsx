@@ -249,9 +249,9 @@ export default function Home() {
       <div className="relative z-10 rounded-lg shadow-xl mx-auto w-11/12 -mt-16" style={{ background: '#ff6900' }}>
         <section className="py-10 text-gray-800">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-white mb-12 text-[60px] font-[400] leading-tight">
+            <h3 className="!text-white mb-12 text-[60px] font-[400] leading-[62px] font-lato">
               <strong>Some</strong> of Our Clients
-            </h2>
+            </h3>
             <div className="grid grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-[2.5641%]">
               {/* Client Logo 1 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
