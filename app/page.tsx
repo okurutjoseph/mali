@@ -105,9 +105,10 @@ export default function Home() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ 
                 type: "spring",
-                stiffness: 150,
-                damping: 15,
-                duration: 0.4
+                stiffness: 70,
+                damping: 20,
+                duration: 0.6,
+                ease: "easeOut"
               }}
               className="bg-lime-500 hover:bg-lime-600 text-black font-semibold px-8 py-3 rounded-full transition text-lg"
             >
@@ -123,7 +124,19 @@ export default function Home() {
         <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-contain opacity-60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="h-full hidden sm:block">
+            <motion.div 
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                type: "spring",
+                stiffness: 70,
+                damping: 20,
+                duration: 0.6,
+                ease: "easeOut"
+              }}
+              className="h-full hidden sm:block"
+            >
               <Image
                 src="/images/imgs-55.png"
                 alt="About Mali Digital"
@@ -131,8 +144,20 @@ export default function Home() {
                 height={512}
                 className="shadow-md h-full object-contain"
               />
-            </div>
-            <div className="text-left text-white">
+            </motion.div>
+            <motion.div 
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                type: "spring",
+                stiffness: 70,
+                damping: 20,
+                duration: 0.6,
+                ease: "easeOut"
+              }}
+              className="text-left text-white"
+            >
               <h3 className="text-[60px] font-[400] mb-6 leading-[1]">
                 About<br />
                 Mali Digital Agency
@@ -141,7 +166,7 @@ export default function Home() {
               <p className="mb-4">With offices in Uganda, Mali Digital Agency leverages its multidisciplinary team's unique skill sets and broad experience across industries to help clients across the world.</p>
               <p className="mb-4">Need help with creating awareness for your brand, connecting with your target audience, or generating leads?</p>
               <PrimaryButton>Book a Consultation</PrimaryButton>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -160,8 +185,8 @@ export default function Home() {
             {/* Service Card 1: Digital Marketing */}
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-marketing.png" alt="Digital Marketing Icon" width={64} height={64} /> 
+                <div className="flex items-center justify-center mb-8">
+                  <Image src="/images/services/digital-marketing.png" alt="Digital Marketing Icon" width={120} height={120} className="w-24 h-24" /> 
                 </div>
                 <h4 className="mb-4">Digital Marketing</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
@@ -174,8 +199,8 @@ export default function Home() {
             {/* Service Card 2: Digital Sales & Leads */}
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-sales-&-leads.png" alt="Digital Marketing Icon" width={64} height={64} /> 
+                <div className="flex items-center justify-center mb-8">
+                  <Image src="/images/services/digital-sales-&-leads.png" alt="Digital Marketing Icon" width={120} height={120} className="w-24 h-24" /> 
                 </div>
                 <h4 className="mb-4">Digital Sales & Leads</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your customers and prospects are on Social media. Your brand should be too.</p>
@@ -188,8 +213,8 @@ export default function Home() {
             {/* Service Card 3: Social Media Management */}
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/social-media-management.png" alt="Social Media Management Icon" width={64} height={64} /> 
+                <div className="flex items-center justify-center mb-8">
+                  <Image src="/images/services/social-media-management.png" alt="Social Media Management Icon" width={120} height={120} className="w-24 h-24" /> 
                 </div>
                 <h4 className="mb-4">Social Media Management</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Your website is your online office address and your 24-hour sales tool.</p>
@@ -202,8 +227,8 @@ export default function Home() {
             {/* Service Card 4: Content Production */}
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/content-production.png" alt="Content Production Icon" width={64} height={64} /> 
+                <div className="flex items-center justify-center mb-8">
+                  <Image src="/images/services/content-production.png" alt="Content Production Icon" width={120} height={120} className="w-24 h-24" /> 
                 </div>
                 <h4 className="mb-4">Content Production</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines help them take buying decisions.</p>
@@ -216,8 +241,8 @@ export default function Home() {
             {/* Service Card 5 Media Buying */}
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/media-buying.png" alt="Media Buying Icon" width={64} height={64} /> 
+                <div className="flex items-center justify-center mb-8">
+                  <Image src="/images/services/media-buying.png" alt="Media Buying Icon" width={120} height={120} className="w-24 h-24" /> 
                 </div>
                 <h4 className="mb-4">Media Buying</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Reach your customers on the go with a custom mobile application.</p>
@@ -230,8 +255,8 @@ export default function Home() {
             {/* Service Card 6 Website Design */}
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/website-design.png" alt="Website Design Icon" width={64} height={64} /> 
+                <div className="flex items-center justify-center mb-8">
+                  <Image src="/images/services/website-design.png" alt="Website Design Icon" width={120} height={120} className="w-24 h-24" /> 
                 </div>
                 <h4 className="mb-4">Website Design</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Make informed decisions with powerful data insights.</p>
@@ -244,8 +269,8 @@ export default function Home() {
             {/* Service Card 7 Digital Skills Training */}
             <div className="px-2 mb-8">
               <div className="bg-[#e9eaf0] rounded-[25px] px-[15px] py-[35px] pb-[45px] mx-3 mb-10 min-h-[380px] block text-center relative">
-                <div className="flex items-center justify-center mb-6">
-                  <Image src="/images/services/digital-skills-training.png" alt="Digital Skills Training Icon" width={64} height={64} /> 
+                <div className="flex items-center justify-center mb-8">
+                  <Image src="/images/services/digital-skills-training.png" alt="Digital Skills Training Icon" width={120} height={120} className="w-24 h-24" /> 
                 </div>
                 <h4 className="mb-4">Digital Skills Training</h4>
                 <p className="text-gray-600 mb-6 min-h-[70px]">Engage your audience with compelling and SEO-friendly content.</p>
