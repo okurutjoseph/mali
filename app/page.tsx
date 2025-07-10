@@ -297,7 +297,7 @@ export default function Home() {
               }}
             >
               <h3 className="!text-white mb-4 leading-[62px] font-lato" style={{ fontSize: '60px' }}>
-                <strong className="font-[900]">Some</strong> of Our Clients
+                <strong className="font-[900]">Some</strong> <span className="font-[400]">of Our Clients</span>
               </h3>
             </motion.div>
             <div className="backdrop-blur-sm rounded-xl p-8 max-w-[1000px] mx-auto">
