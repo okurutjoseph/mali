@@ -107,7 +107,7 @@ export default function Home() {
       {/* About Us Section */}
       <section className="pt-16 pb-0 relative">
         <div className="absolute inset-0 bg-[#0e155b]"></div>
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-bottom opacity-60"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-contain opacity-60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="h-full hidden sm:block">
@@ -423,7 +423,7 @@ export default function Home() {
       {/* Our Happy Clients Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-[#0e155b]"></div>
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left bg-contain opacity-60"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[url('/images/clients.png')] bg-no-repeat bg-left-bottom bg-contain opacity-60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-center mb-16">
             <span className="text-[#ff6900] text-6xl font-bold">Our Happy</span>
