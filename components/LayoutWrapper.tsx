@@ -9,24 +9,15 @@ interface LayoutWrapperProps {
   children: React.ReactNode;
 }
 
-const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
-  const pathname = usePathname();
-  const isMainPage = pathname === '/';
-  const isAuthPage = pathname?.startsWith('/sign-in') || pathname?.startsWith('/admin');
-
-  if (isAuthPage) {
-    return <div className="min-h-screen">{children}</div>;
-  }
-
+export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Header />
       <main className="flex-grow">
         {children}
       </main>
-      {isMainPage ? <MainFooter /> : <SecondaryFooter />}
+      <MainFooter />
+      <SecondaryFooter />
     </div>
   );
-};
-
-export default LayoutWrapper; 
+} 

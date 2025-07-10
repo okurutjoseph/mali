@@ -72,7 +72,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative" style={{ minHeight: '100vh' }}>
+    <div className="relative overflow-x-hidden" style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
       <section className="w-full relative flex flex-col items-start justify-center" style={{ minHeight: '500px' }}>
         {/* Background video */}
@@ -246,13 +246,13 @@ export default function Home() {
       </section>
 
       {/* Some of Our Clients Section Wrapper */}
-      <div className="relative z-10 rounded-lg shadow-xl mx-auto w-11/12 -mt-16" style={{ background: '#ff6900' }}>
+      <div className="relative z-10 rounded-lg shadow-xl mx-auto w-[95%] max-w-[1400px] -mt-16" style={{ background: '#ff6900' }}>
         <section className="py-10 text-gray-800">
           <div className="container mx-auto px-4 text-center">
             <h3 className="!text-white mb-12 text-[60px] font-[400] leading-[62px] font-lato">
               <strong>Some</strong> of Our Clients
             </h3>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-[2.5641%]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-auto max-w-[1200px]">
               {/* Client Logo 1 */}
               <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
                 <Image 
