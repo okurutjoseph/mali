@@ -285,7 +285,7 @@ export default function Home() {
 
       {/* Some of Our Clients Section Wrapper */}
       <div className="relative z-10 rounded-lg shadow-xl mx-auto w-[95%] max-w-[1400px] -mt-16" style={{ background: '#ff6900' }}>
-        <section className="py-8 text-gray-800">
+        <section className="pt-12 pb-8 text-gray-800">
           <div className="container mx-auto px-4 md:px-16 text-center">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
