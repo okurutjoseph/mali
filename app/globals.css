@@ -51,6 +51,13 @@ h5 {
   font-family: var(--font-poppins), sans-serif;
 }
 
+h6 {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  font-family: var(--font-poppins), sans-serif;
+}
+
 .services-column {
   max-height: 250px; /* Adjust the value as needed */
   overflow: hidden;
