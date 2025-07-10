@@ -285,122 +285,140 @@ export default function Home() {
 
       {/* Some of Our Clients Section Wrapper */}
       <div className="relative z-10 rounded-lg shadow-xl mx-auto w-[95%] max-w-[1400px] -mt-16" style={{ background: '#ff6900' }}>
-        <section className="py-10 text-gray-800">
-          <div className="container mx-auto px-4 text-center">
-            <h3 className="!text-white mb-12 text-[60px] font-[400] leading-[62px] font-lato">
-              <strong>Some</strong> of Our Clients
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 justify-items-center mx-auto max-w-[1200px]">
-              {/* Client Logo 1 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/macho.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 2 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/nishati.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 3 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/level0.png" 
-                  alt="Client Logo" 
-                  width={80} 
-                  height={40} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 4 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/easy-housing.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 5 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/true-african.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 6 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/precision-hr.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 7 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/trenic-properties.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 8 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/mint-africa.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 9 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/nishati-business.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
-              {/* Client Logo 10 */}
-              <div className="bg-white p-4 flex items-center justify-center h-24 w-full">
-                <Image 
-                  src="/images/clients/logo10.png" 
-                  alt="Client Logo" 
-                  width={120} 
-                  height={60} 
-                  objectFit="contain"
-                  className="transition-transform duration-300 hover:scale-110"
-                />
-              </div>
+        <section className="py-8 text-gray-800">
+          <div className="container mx-auto px-4 md:px-16 text-center">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.6,
+                ease: "easeOut"
+              }}
+            >
+              <h3 className="!text-white mb-4 leading-[62px] font-lato" style={{ fontSize: '60px' }}>
+                <strong className="font-[900]">Some</strong> of Our Clients
+              </h3>
+            </motion.div>
+            <div className="backdrop-blur-sm rounded-xl p-8 max-w-[1000px] mx-auto">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 justify-items-center"
+              >
+                {/* Client Logo 1 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/macho.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 2 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/nishati.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 3 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/level0.png" 
+                    alt="Client Logo" 
+                    width={90} 
+                    height={45} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 4 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/easy-housing.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 5 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/true-african.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 6 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/precision-hr.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 7 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/trenic-properties.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 8 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/mint-africa.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 9 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/nishati-business.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                {/* Client Logo 10 */}
+                <div className="bg-white p-4 rounded-[3px] flex items-center justify-center h-24 w-full shadow-lg">
+                  <Image 
+                    src="/images/clients/logo10.png" 
+                    alt="Client Logo" 
+                    width={120} 
+                    height={60} 
+                    objectFit="contain"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
