@@ -381,12 +381,12 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-4 mb-12">
+        <div className="relative z-10 flex flex-col items-center text-center px-4 mb-12 -mt-20">
           {/* Vertical Line */}
-          <div className="w-[1px] h-[60px] bg-[#ffffff] mb-6"></div>
+          <div className="w-[1px] h-[40px] bg-[#ffffff] mb-6"></div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#ffffff]">Get Started with Marketing<br />for your brand</h2>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl">Transform your business with professional marketing ideated and implemented by experts with deep market experience.</p>
+          <h2 className="!text-white mb-4">Get Started with Marketing<br />for your brand</h2>
+          <p className="text-white text-lg md:text-xl mb-8 max-w-2xl">Transform your business with professional marketing ideated and implemented by experts with deep market experience.</p>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition text-lg">GET STARTED</button>
         </div>
 
