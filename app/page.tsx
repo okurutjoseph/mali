@@ -369,7 +369,7 @@ export default function Home() {
       </div>
 
       {/* Get Started Section */}
-      <section className="relative w-full pt-95 pb-20 overflow-visible bg-blue-900 -mt-64" style={{ minHeight: '700px', zIndex: 2 }}>
+      <section className="relative w-full pt-95 pb-96 overflow-visible bg-blue-900 -mt-64" style={{ minHeight: '700px', zIndex: 2 }}>
         {/* Background Image */}
         <Image
           src="/images/get-started.png"
@@ -391,7 +391,7 @@ export default function Home() {
         </div>
 
         {/* Person Image */}
-        <div className="absolute -bottom-56 left-1/2 transform -translate-x-1/2" style={{ zIndex: 9999 }}>
+        <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2" style={{ zIndex: 9999 }}>
           <div className="relative">
             <Image
               src="/images/image.png"
