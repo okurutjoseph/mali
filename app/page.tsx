@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
+import { motion } from 'framer-motion';
 import PrimaryButton from '@/components/PrimaryButton';
 import BlogSection from '../components/BlogSection';
 import { useQuery } from 'convex/react';
@@ -99,7 +100,19 @@ export default function Home() {
               className="mb-8"
               priority
             />
-            <button className="bg-lime-500 hover:bg-lime-600 text-black font-semibold px-8 py-3 rounded-full transition text-lg">Get Started</button>
+            <motion.button 
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 150,
+                damping: 15,
+                duration: 0.4
+              }}
+              className="bg-lime-500 hover:bg-lime-600 text-black font-semibold px-8 py-3 rounded-full transition text-lg"
+            >
+              Get Started
+            </motion.button>
           </div>
         </div>
       </section>
